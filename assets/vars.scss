@@ -1,0 +1,64 @@
+$ayy: #7FDBFD;
+$teal:#0d3545;
+$grey:#656f72;
+
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin maxWidth {
+    width:80vw;
+    max-width:94rem;
+}
+
+@mixin h1 {
+    font-size:2.6rem;
+    font-family: 'Raleway Extra Bold', sans-serif !important;
+    color:white;
+    text-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
+
+}
+
+@mixin textMargin {
+    padding: 0;
+    margin: 2rem 0 1rem;
+
+}
+
+@mixin h2 {
+    font: 2.8rem/120% "open_sanslight", arial, sans-serif; 
+    font-family: "open_sansregular", arial, sans-serif;
+    color: var(--greyText);
+
+    @include textMargin
+  
+}
+
+@mixin h3 {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight:400;
+
+    @include textMargin
+}
+
+@mixin serviceH2 {
+    font-size: 20px;
+    font-size:400;
+    color: var(--mainText);
+}
+
+@mixin flexCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin desktop {
+    @media (min-width:1024px) {
+        @content
+    }
+}
+

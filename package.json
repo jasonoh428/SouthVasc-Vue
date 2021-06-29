@@ -1,0 +1,24 @@
+{
+  "name": "SouthernVascular",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/sanity": "^0.9.4",
+    "@sanity/image-url": "^0.140.22",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/color-mode": "^2.0.10",
+    "@nuxtjs/style-resources": "^1.2.0",
+    "fibers": "^5.0.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^10.2.0"
+  }
+}

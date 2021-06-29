@@ -1,0 +1,54 @@
+:root {
+    --mainText:#000000;
+    --greyText:#656f72;;
+    --teal:$teal;
+    --grey:$grey;
+    --lightBlue:#7FDBFD;
+    --darkBlue:#0d3545;
+    --bg:#ffffff;
+    --link:#0d3545;
+    font-size:10px;
+}
+
+body {
+    transition: background-color 0.5s;
+    background-color: var(--bg);
+}
+
+.dark-mode {
+    --bg:#121212;
+    --greyText:#FAFAFA;
+    --lightBlue:#0d3545;
+    --link:#ffffff;
+}
+
+
+//text 
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--greyText)
+}
+p {
+    font-weight: 400;
+    line-height: 180%;
+    margin: 0 0 1.2rem;
+    font: 1.5rem/180% "open_sansregular", arial, sans-serif;
+    color: var(--greyText)
+}
+ul {
+    padding:0;
+}
+li {
+    font-weight: 400;
+    margin-left: 3rem;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    font: 1.5rem/180% "open_sansregular", arial, sans-serif;
+    color: var(--greyText);
+    box-sizing: border-box;
+
+}
+
+a {
+    color:var(--link)
+}
