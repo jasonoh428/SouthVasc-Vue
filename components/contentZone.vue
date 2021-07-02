@@ -1,6 +1,8 @@
 <template>
   <section class="pageContent">
     <component
+
+   
       :content="block"
       :is="block._type"
       v-for="(block, i) in content"
@@ -23,17 +25,15 @@ export default {
     content: {
       type: Array,
       required: false
-    }
+    },
+
+   
   },
 
-  mounted() {
-    console.log(this.content);
-  }
+ 
 };
 </script>
 
 <style lang="scss" scoped>
-.pageContent {
-  padding: 2rem;
-}
+
 </style>

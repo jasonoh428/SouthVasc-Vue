@@ -37,7 +37,7 @@ $grey:#656f72;
 
 @mixin h3 {
     font-size: 1.8rem;
-    color: #000;
+    color: var(--greyText);
     font-weight:400;
 
     @include textMargin

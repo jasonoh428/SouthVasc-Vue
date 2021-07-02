@@ -47,10 +47,10 @@ export default {
     margin-bottom: 18px;
     text-transform: uppercase;
 
-     @include desktop {
-         margin-top: 4rem;
-        width:100%;
-        text-align: center;
+    @include desktop {
+      margin-top: 4rem;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -59,23 +59,23 @@ export default {
     font-size: 3.6rem;
 
     @include desktop {
-        width:100%;
-        text-align: center;
+      width: 100%;
+      text-align: center;
     }
   }
 
   @include desktop {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 .serviceCard {
-   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), var(--bg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
   height: 202px;
   width: 234px;
-  border:1px solid white;
+  border: 1px solid white;
   background-size: cover;
   background-position: center center;
 
@@ -87,22 +87,22 @@ export default {
   padding: 1rem;
 
   @include desktop {
-      width:25%;
+    width: 25%;
   }
 
   a,
   h4 {
-      text-align: center;
+    text-align: center;
     color: white;
     text-decoration: none;
   }
 
   h4 {
-      font-size:1.8rem
+    font-size: 1.8rem;
   }
 
   a {
-      font-size:1.2rem;
+    font-size: 1.2rem;
   }
 }
 </style>

@@ -1,27 +1,34 @@
 <template>
   <section class="richText">
-    <sanity-content :serializers="serializers" :blocks="content.text" />
+    <sidebar :page = "content.sidebarPages" v-if="content.sidebar" />
+    <sanity-content
+      class="richText__Text"
+      :serializers="serializers"
+      :blocks="content.text"
+    />
   </section>
 </template>
 
 <script>
 import inlineImage from "~/components/inlineImage.vue";
+import titleBar from "~/components/titleBar.vue";
+
 export default {
   props: {
     content: {
       type: Object,
       required: true
-    }
+    },
+
+   
   },
 
-  mounted() {
-    console.log(this.$props.content);
-  },
+  
 
   data() {
     return {
       serializers: {
-        types: { inlineImage: inlineImage }
+        types: { inlineImage: inlineImage, titleBar: titleBar }
       }
     };
   }
@@ -32,6 +39,11 @@ export default {
 .richText {
   @include center;
   @include maxWidth;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
   margin-bottom: 8rem;
 
   h2 {
@@ -45,5 +57,9 @@ export default {
   h3 {
     @include h3;
   }
+}
+
+.richText__Text {
+  flex: 3;
 }
 </style>

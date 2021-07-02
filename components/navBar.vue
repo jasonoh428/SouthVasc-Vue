@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="navLinks">
-      <menuLink :link = "link" v-for="(link, i) in menu.links" :key="i" />
+      <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" />
     </div>
   </nav>
 </template>
@@ -26,16 +26,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .navLinks {
-    @include desktop {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: stretch;
-        position: relative;
-    }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    position: relative;
+  }
 }
-
 </style>

@@ -5,7 +5,7 @@
       <div class="pageTitle">
           <h1>{{page.title}}</h1>
       </div>
-      <contentZone :content = "page.content"/> 
+      <contentZone  :content = "page.content"/> 
   </section>
 </template>
 
@@ -24,6 +24,11 @@ export default {
         const page = await $sanity.fetch(pageQuery(params.uid))
         return {page}
     },
+
+    mounted() {
+        console.log(this.page)
+    }
+
 
  
 

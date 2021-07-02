@@ -1,12 +1,16 @@
 <template>
-  <div class="linkWrapper">
+  <div
+    @mouseenter="toggleExpand()"
+    class="linkWrapper"
+    @mouseleave="toggleExpand()"
+  >
     <span @click="toggleExpand()" v-if="link.children" class="expand">
       +
     </span>
     <!--Internal Link-->
     <nuxt-link
       class="menuLink"
-      :to="link.slug"
+      :to="'/' + link.slug"
       v-if="link.internal && link.slug"
       >{{ link.display }}</nuxt-link
     >
@@ -19,31 +23,24 @@
     <!---External Link--->
     <a class="menuLink" v-else href="">{{ link.display }}</a>
 
-
-
-<!--Child Links-->
+    <!--Child Links-->
     <div :aria-expanded="expanded" v-if="link.children" class="link__children">
-      
+      <div v-for="(link, i) in link.children" :key="i" class="childLinkWrapper">
+        <!--Internal Link-->
+        <nuxt-link
+          class="menuLink childLink"
+          :to="link.slug"
+          v-if="link.internal && link.slug"
+          >{{ link.display }}</nuxt-link
+        >
 
-      <div v-for = "(link, i) in link.children" :key = "i" class="childLinkWrapper">
+        <!--Container Link -->
+        <div class="menuLink childLink" v-else-if="link.internal && !link.slug">
+          {{ link.display }}
+        </div>
 
-           <!--Internal Link-->
-    <nuxt-link
-      class="menuLink"
-      :to="link.slug"
-      v-if="link.internal && link.slug"
-      >{{ link.display }}</nuxt-link
-    >
-
-    <!--Container Link -->
-    <div class="menuLink" v-else-if="link.internal && !link.slug">
-      {{ link.display }}
-    </div>
-
-    <!---External Link--->
-    <a class="menuLink" v-else href="">{{ link.display }}</a>
-
-
+        <!---External Link--->
+        <a class="menuLink childLink" v-else href="">{{ link.display }}</a>
       </div>
     </div>
   </div>
@@ -64,27 +61,20 @@ export default {
     };
   },
 
-  mounted() {
-    console.log(this.$props.link);
-  },
-
   methods: {
     toggleExpand() {
-        console.log('toggled')
+      console.log("toggled");
       this.expanded = !this.expanded;
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .linkWrapper {
   padding: 2rem;
-  
 
   position: relative;
-
- 
 
   @include desktop {
     padding-left: 0;
@@ -93,11 +83,15 @@ export default {
 }
 
 .expand {
-    color:var(--link);
-    cursor: pointer;
-    font-size:1.3rem;
-    font-weight:bold;
+  color: var(--link);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
   display: inline-block;
+
+  @include desktop {
+    display: none;
+  }
 }
 
 .menuLink {
@@ -132,7 +126,8 @@ export default {
   margin-left: 1rem;
   font-size: 1.3rem;
   @include desktop {
-    padding: 2rem;
+    padding: 1.5rem;
+    width: 100%;
     border-bottom: 1px solid var(--greyText);
   }
 }

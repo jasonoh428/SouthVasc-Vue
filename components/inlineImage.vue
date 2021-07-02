@@ -18,9 +18,8 @@ export default {
 
 <style lang="scss">
 .inlineImage {
-
-    padding-left: 2rem;
-    padding-right: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   float: var(--float);
   width: var(--width);
 }

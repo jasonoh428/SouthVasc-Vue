@@ -60,7 +60,7 @@ export default {
     font-size: 1.4rem;
     line-height: 120%;
     padding: 0;
-    color: #333;
+    color: var(--greyText);
     font-weight: normal;
     font-family: "open_sansregular", arial, sans-serif;
   }

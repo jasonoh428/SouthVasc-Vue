@@ -5,16 +5,59 @@ const bodyQuery = groq`
 
 content[] {
     ...,
+
+    _type == 'starTestimonialsSection' => {
+    'testimonials':*[_type == 'testimonialsStars'] {
+      name,
+      date,
+      starts,
+      review,
+    }
+  },
+
+  _type == 'imageTestimonialsSection' => {
+    'testimonials':*[_type == 'testimonialsNormal'] {
+      text,
+      image
+    }
+  },
+
+  _type == 'blogsSection' => {
+    'blogs':*[_type == 'blog'] {
+      title,
+      date,
+      excerpt,
+      'slug':slug.current
+    }
+  },
+
+    _type == 'richText' => {
+    
+    'pages':*[_type == 'nav'] {
+      sidebar
+    },
+
+    'sidebarPages':*[_type == 'inPageMenus'][1].links[] -> {
+      title,
+      'slug':slug.current
+    },
+    
+  },
+
     _type == 'serviceGrid' => {
     _key,
+    category,
     
-    'pages': *[_type == 'page' && defined(category) && references(^.category -> _id)]
+    'pages': *[_type == 'page' && defined(category) && references(category -> _id)]
   }
   }
 `;
 
 export const pageQuery = param => {
   return `*[_type == 'page' && defined(slug) && slug.current == '${param}'][0] {
+
+   
+
 ${bodyQuery}
     }`;
 };
@@ -36,4 +79,25 @@ export const navQuery = groq`
     }
   }
 }
-`
+`;
+
+export const blogQuery = param => {
+  return `*[_type == 'blog' && defined(slug) && slug.current == '${param}'][0] {
+    ...,
+    title,
+    text,
+
+    'otherBlogs': *[_type == 'blog' && defined(slug) && slug.current != '${param}'] {
+      title,
+      excerpt,
+      date
+    }
+  }`;
+};
+
+export const homeQuery = () => {
+  return `*[_type =='home' && defined(slug)][0] {
+
+    ${bodyQuery}
+}`;
+};
