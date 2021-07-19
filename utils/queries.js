@@ -101,3 +101,6 @@ export const homeQuery = () => {
     ${bodyQuery}
 }`;
 };
+
+export const footerQuery = groq`*[_type == 'location']
+`

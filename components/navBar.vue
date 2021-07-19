@@ -19,9 +19,7 @@ export default {
     this.menu = await this.$sanity.fetch(navQuery);
   },
 
-  mounted() {
-    console.log(this.menu);
-  }
+  
 };
 </script>
 

@@ -10,9 +10,7 @@
 <script>
 export default {
   props: ["image", "width", "float"],
-  mounted() {
-    console.log(this.$props);
-  }
+  
 };
 </script>
 

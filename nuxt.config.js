@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/sanity/imageUrl.js'
+    '~/plugins/sanity/imageUrl.js',
+    '~/plugins/vue/youtube.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,8 +49,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-webfontloader',
   ],
+
+  webfontloader: {
+    google: {
+      families: ['Raleway:400,700,800', 'Open-sans:400'] //Loads Lato font with weights 400 and 700
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
