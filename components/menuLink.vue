@@ -1,10 +1,10 @@
 <template>
   <div
-    @mouseenter="toggleExpand()"
+ 
     class="linkWrapper"
-    @mouseleave="toggleExpand()"
+ 
   >
-    <span @click="toggleExpand()" v-if="link.children" class="expand">
+    <span :aria-selected = "expanded" @click="toggleExpand()" v-if="link.children" class="expand">
       +
     </span>
     <!--Internal Link-->
@@ -86,12 +86,15 @@ export default {
   color: var(--link);
   cursor: pointer;
   font-size: 1.3rem;
+  margin-right: .5rem;
   font-weight: bold;
   display: inline-block;
 
-  @include desktop {
-    display: none;
+  &[aria-selected = "true"] {
+    transform:rotate(45deg)
   }
+
+
 }
 
 .menuLink {
@@ -99,7 +102,7 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.3rem;
-  margin-right: 3rem;
+  margin-right: 4rem;
   color: var(--link);
 }
 
