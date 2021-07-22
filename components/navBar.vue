@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class = "nav" v-if = "!$fetchState.pending">
     <div @click = "opened = !opened" :aria-selected = "opened" class="hamburger">
       <div class="hamburger__line"></div>
       <div class="hamburger__line"></div>
@@ -7,7 +7,11 @@
     </div>
     <div :class = "!opened ? 'hideNav' : ''" class="navLinks">
       <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" />
+
+      
     </div>
+
+      <nuxt-link class = "button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
   </nav>
 </template>
 
@@ -23,6 +27,10 @@ export default {
 
   async fetch() {
     this.menu = await this.$sanity.fetch(navQuery);
+  },
+
+  mounted() {
+    console.log(this.menu)
   }
 };
 </script>
@@ -35,6 +43,21 @@ export default {
     justify-content: flex-end;
     align-items: stretch;
     position: relative;
+  }
+}
+
+.nav {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-right: 1rem;
+
+    .button {
+      margin: 0;
+    }
   }
 }
 

@@ -113,6 +113,8 @@ export default {
 
   &[aria-expanded="true"] {
     height: auto;
+    z-index:100;
+    overflow: visible;
   }
   @include desktop {
     width: 300px;

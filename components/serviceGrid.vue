@@ -1,6 +1,6 @@
 <template>
   <section class="serviceGrid">
-    <p>What we offer</p>
+   <p>What we offer</p>
     <h3>Services</h3>
 
     <div

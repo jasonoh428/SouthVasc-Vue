@@ -15,6 +15,10 @@ content[] {
     }
   },
 
+  _type == 'locations' => {
+    'locations' : *[_type == 'location']
+  },
+
   _type == 'imageTestimonialsSection' => {
     'testimonials':*[_type == 'testimonialsNormal'] {
       text,
@@ -45,10 +49,13 @@ content[] {
   },
 
     _type == 'serviceGrid' => {
-    _key,
-    category,
+   
+    collection,
+
+    'pages': collection->pages[]->,
+      
     
-    'pages': *[_type == 'page' && defined(category) && references(category -> _id)]
+   
   }
   }
 `;
@@ -65,9 +72,17 @@ ${bodyQuery}
 export const navQuery = groq`
 
 *[_type == 'nav'][0] {
+
+  button -> {
+  title,
+  'slug':slug.current
+},
+  
   links[] {
     display,
     internal,
+
+
 
     'slug':internalPage -> slug.current,
     
@@ -76,7 +91,9 @@ export const navQuery = groq`
       display,
       internal,
       'slug':internalPage -> slug.current
-    }
+    },
+
+    
   }
 }
 `;
@@ -86,6 +103,8 @@ export const blogQuery = param => {
     ...,
     title,
     text,
+
+   
 
     'otherBlogs': *[_type == 'blog' && defined(slug) && slug.current != '${param}'] {
       title,

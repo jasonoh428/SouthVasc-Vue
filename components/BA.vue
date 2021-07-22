@@ -3,8 +3,8 @@
     <div class="beforeAfters__images">
       <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
       <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
-      <img :src="$urlFor(content.beforeAfters[current].imageA)" alt="" />
-      <img :src="$urlFor(content.beforeAfters[current].imageB)" alt="" />
+      <img class = "beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageA)" alt="" />
+      <img class = "beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageB)" alt="" />
     </div>
     <div class="beforeAfters__Controls">
       <div
@@ -58,6 +58,13 @@ export default {
 
 .beforeAfters__images {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.beforeAfters__image {
+  width:40%;
 }
 .beforeAfters__Controls {
   display: flex;
