@@ -11,7 +11,7 @@
       <h1>{{ content.heading }}</h1>
       <p>{{ content.subHeading }}</p>
 
-      <nuxt-link class="button button--Green" to="/">placeholder</nuxt-link>
+      <nuxt-link class="button button--Green" :to="content.button1Link.slug">{{content.button1Link.display}}</nuxt-link>
       <nuxt-link class="button button--Blue" to="/">placeholder</nuxt-link>
     </div>
   </section>
@@ -45,7 +45,7 @@ export default {
     },
 
     preload(url) {
-      console.log(url);
+      
       let img = new Image();
       img.src = url;
     }
@@ -58,6 +58,7 @@ export default {
   },
   mounted() {
     this.startInterval();
+    console.log(this.$props.content)
   },
 
   destroyed() {

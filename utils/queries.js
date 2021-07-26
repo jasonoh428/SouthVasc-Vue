@@ -6,6 +6,34 @@ const bodyQuery = groq`
 content[] {
     ...,
 
+    _type == 'sliderHero' => {
+      ...,
+      button1Link {
+        ...,
+        'slug' : internalPage->slug.current
+      }
+    },
+
+    _type == 'cta' => {
+
+      button1{
+        file{
+        asset -> {url}
+        },
+        ...,
+        'slug' : internalPage->slug.current
+      },
+
+      button2{
+        file{
+        asset -> {url}
+        },
+        ...,
+        'slug' : internalPage->slug.current
+      }
+
+    },
+
     _type == 'starTestimonialsSection' => {
     'testimonials':*[_type == 'testimonialsStars'] {
       name,
@@ -46,6 +74,18 @@ content[] {
       'slug':slug.current
     },
     
+  },
+
+  _type == 'cta2' => {
+
+    link {
+        file{
+        asset -> {url}
+        },
+        ...,
+        'slug' : internalPage->slug.current
+      },
+
   },
 
     _type == 'serviceGrid' => {
@@ -89,8 +129,13 @@ export const navQuery = groq`
     
     children[] {
       display,
+      file{
+        asset -> {url}
+        },
       internal,
-      'slug':internalPage -> slug.current
+     
+      'slug':internalPage -> slug.current,
+     
     },
 
     

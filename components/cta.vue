@@ -2,8 +2,8 @@
   <section class="cta">
     <strong>{{ content.title }}</strong>
 
-    <a href="" class="button button--Green">placeholder</a
-    ><a href="" class="button button--Blue">placeholder</a>
+    <a :href="content.button1.file.asset.url" class="button button--Green">{{content.button1.display}}</a
+    ><nuxt-link :to="content.button2.slug" class="button button--Blue">{{content.button2.display}}</nuxt-link>
   </section>
 </template>
 
@@ -37,6 +37,7 @@ export default {
   .button {
     @include center;
     margin-top: 2rem;
+    margin-right: 1rem;
   }
 }
 </style>

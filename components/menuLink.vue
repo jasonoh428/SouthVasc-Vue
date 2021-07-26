@@ -4,7 +4,7 @@
     class="linkWrapper"
  
   >
-    <span :aria-selected = "expanded" @click="toggleExpand()" v-if="link.children" class="expand">
+    <span :aria-selected = "expanded" @click="toggleExpand()" v-if = " typeof(link.children) != 'undefined' " class="expand">
       +
     </span>
     <!--Internal Link-->
@@ -21,7 +21,7 @@
     </div>
 
     <!---External Link--->
-    <a class="menuLink" v-else href="">{{ link.display }}</a>
+    <a class="menuLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
 
     <!--Child Links-->
     <div :aria-expanded="expanded" v-if="link.children" class="link__children">
@@ -40,7 +40,7 @@
         </div>
 
         <!---External Link--->
-        <a class="menuLink childLink" v-else href="">{{ link.display }}</a>
+        <a class="menuLink childLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
       </div>
     </div>
   </div>
@@ -54,6 +54,7 @@ export default {
       type: Object
     }
   },
+  
 
   data() {
     return {

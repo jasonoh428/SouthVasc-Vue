@@ -5,7 +5,7 @@
 
     <footerComp/>
 
-    <div @click = "switchColor()" class="colorMode">{{$colorMode.preference}}</div>
+  
 
   </div>
 </template>

@@ -7,7 +7,7 @@
       <img :src="$urlFor(content.img2)" alt="" />
     </div>
 
-    <nuxt-link class="button button--Green" to="">Call us</nuxt-link>
+    <a class="button button--Green" :href="content.link.externalLink">{{content.link.display}}</a>
   </section>
 </template>
 
