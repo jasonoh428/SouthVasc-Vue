@@ -1,6 +1,6 @@
 <template>
 
-<section class="imageRich">
+<section class="imageRich richText">
 
     <img class = "imageRich__img" :src = "$urlFor(content.image)"/>
     <sanity-content class = "imageRich__text" :blocks = "content.text"/>

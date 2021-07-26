@@ -11,7 +11,7 @@
       
     </div>
 
-      <nuxt-link class = "button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
+      <nuxt-link :class = "!opened ? 'hideNav' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
   </nav>
 </template>
 
@@ -86,9 +86,32 @@ export default {
 
 }
 
+.hideNav.button {
+  @include desktop {
+    display: block;
+  }
+}
+
 .hamburger__line {
   width: 100%;
   height: 4px;
   background-color: var(--lightBlue);
+}
+
+.nav__button {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+}
+
+.showButton {
+
+  display: block;
+
+
+  @include desktop {
+    display: block  !important;
+  }
 }
 </style>
