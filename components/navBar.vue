@@ -1,5 +1,10 @@
 <template>
+
+<section>
+    <div class="navTop">Now accepting <nuxt-link to = "/telehealth">Telehealth</nuxt-link> appointments. <nuxt-link to = "/schedule">Schedule a virtual visit.</nuxt-link> </div>
   <nav class = "nav" v-if = "!$fetchState.pending">
+
+  
     <div @click = "opened = !opened" :aria-selected = "opened" class="hamburger">
       <div class="hamburger__line"></div>
       <div class="hamburger__line"></div>
@@ -13,6 +18,7 @@
 
       <nuxt-link :class = "!opened ? 'hideNav' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
   </nav>
+</section>
 </template>
 
 <script>
@@ -23,6 +29,12 @@ export default {
       menu: {},
       opened:false
     };
+  },
+
+  watch: {
+    '$route.fullPath' : function() {
+      this.opened = false;
+    }
   },
 
   async fetch() {
@@ -59,6 +71,21 @@ export default {
       margin: 0;
     }
   }
+}
+
+.navTop {
+  @include maxWidth;
+  @include center;
+  text-align: center;
+  padding-top: 1rem;
+
+  font-size:1.6rem;
+
+  display: none; 
+
+    @include desktop {
+      display: block;
+    }
 }
 
 .hamburger {

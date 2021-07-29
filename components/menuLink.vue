@@ -62,6 +62,12 @@ export default {
     };
   },
 
+   watch: {
+    '$route.fullPath' : function() {
+      this.expanded = false;
+    }
+  },
+
   methods: {
     toggleExpand() {
       console.log("toggled");

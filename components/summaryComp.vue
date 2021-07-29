@@ -29,6 +29,7 @@ export default {
 .preBody {
   @include center;
   @include maxWidth;
+  margin-top: 2rem;
 
   @include desktop {
     display: flex;

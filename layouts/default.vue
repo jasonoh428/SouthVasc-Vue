@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <overlay v-if = "form"/>
     <navBar/>
     <Nuxt />
 
@@ -80,12 +82,22 @@ html {
 </style>
 
 <script>
+
+import {mapState} from 'vuex'
 export default {
   methods: {
     switchColor() {
       this.$colorMode.preference === 'light' ? this.$colorMode.preference = 'dark' : this.$colorMode.preference = 'light'
     }
-  }
+  },
+
+  computed: {
+   ...mapState({
+     form : 'formIsOpened'
+   })
+  },
+
+ 
 }
 </script>
 
