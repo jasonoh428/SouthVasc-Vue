@@ -12,7 +12,7 @@
       <p>{{ content.subHeading }}</p>
 
       <nuxt-link class="button button--Green" :to="content.button1Link.slug">{{content.button1Link.display}}</nuxt-link>
-      <nuxt-link class="button button--Blue" to="/">placeholder</nuxt-link>
+      <overlayButton :display = "'Request Appointment'"/>
     </div>
   </section>
 </template>

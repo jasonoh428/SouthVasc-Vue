@@ -6,7 +6,14 @@
       class="location__wrapper"
     >
       <div class="location map-responsive" v-html="location.mapEmbed"></div>
-      <a class = "mapLink" :href="'tel:' + location.phoneAppt">{{location.phoneAppt}}</a>
+
+      <div class="location__Details">
+        <a class="mapLink" :href="'tel:' + location.phoneAppt">{{
+          location.phoneAppt
+        }}</a>
+
+        <overlayButton :display = "'REQUEST APPOINTMENT'"/>
+      </div>
     </div>
   </section>
 </template>
@@ -34,14 +41,21 @@ export default {
   flex-direction: row;
   width: 90vw;
   @include center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+
 
   .location__wrapper {
-    width: 15%;
-    margin: 0 0 6px;
-    height: 190px;
+    width: 33%;
+    padding:.5rem;
+    margin:.5rem;
 
     
+    margin-bottom: 3rem;
+
+-webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16); 
+box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
+
     iframe {
       margin: 0;
       padding: 0;
@@ -51,13 +65,35 @@ export default {
   }
 }
 
-.mapLink {
-    color:var(--lightBlue);
+.location__Details {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding:1rem;
+  
+
+  * {
+    font-size:1.4rem !important;
     display: block;
-    text-decoration: none;
-    font-size:2rem;
-    padding:1rem;
+    border-radius:0;
+    flex:1;
     text-align: center;
-    border:1px solid var(--lightBlue);
+    margin: 0;
+  }
+}
+
+.mapLink {
+  color: var(--lightBlue);
+  display: block;
+  text-decoration: none;
+  line-height: 100%;;
+  padding: .5rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--lightBlue);
 }
 </style>

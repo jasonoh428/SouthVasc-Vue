@@ -5,8 +5,9 @@ export const state = () => ({
 export const mutations = {
     toggleForm(state) {
 
-        let newFormValue = !this.formIsOpened
+        let newFormValue = !state.formIsOpened
 
+        console.log(newFormValue)
         state.formIsOpened = newFormValue
 
     }

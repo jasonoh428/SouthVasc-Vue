@@ -4,24 +4,32 @@
     class="linkWrapper"
  
   >
+
+  <div  class = "link__Top" >
     <span :aria-selected = "expanded" @click="toggleExpand()" v-if = " typeof(link.children) != 'undefined' " class="expand">
       +
     </span>
     <!--Internal Link-->
-    <nuxt-link
+    <nuxt-link 
+    v-if="link.internal && link.slug"
       class="menuLink"
       :to="'/' + link.slug"
-      v-if="link.internal && link.slug"
+     
       >{{ link.display }}</nuxt-link
     >
 
-    <!--Container Link -->
+        <!--Container Link -->
     <div class="menuLink" v-else-if="link.internal && !link.slug">
       {{ link.display }}
     </div>
 
     <!---External Link--->
     <a class="menuLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
+
+     </div>
+   
+
+
 
     <!--Child Links-->
     <div :aria-expanded="expanded" v-if="link.children" class="link__children">
@@ -79,7 +87,8 @@ export default {
 
 <style lang="scss" scoped>
 .linkWrapper {
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   position: relative;
 
@@ -89,13 +98,25 @@ export default {
   }
 }
 
+.link__Top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height:100%;
+  justify-content: flex-start;
+}
+
 .expand {
+  white-space: nowrap;
   color: var(--link);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-right: .5rem;
+  
   font-weight: bold;
-  display: inline-block;
+  display: block;
+
+ 
 
   &[aria-selected = "true"] {
     transform:rotate(45deg)
@@ -105,11 +126,11 @@ export default {
 }
 
 .menuLink {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.3rem;
-  margin-right: 4rem;
+  font-size: 1.1rem;
+  margin-right: 2rem;
   color: var(--link);
 }
 

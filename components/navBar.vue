@@ -17,6 +17,7 @@
     </div>
 
       <nuxt-link :class = "!opened ? 'hideNav' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
+      <overlayButton :class = "!opened ? 'hideNav' : 'showButton'" class = "nav__button" :display = "'Request Appointment'"/>
   </nav>
 </section>
 </template>
@@ -64,11 +65,14 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-
+    padding-left: 1rem;
     padding-right: 1rem;
 
     .button {
       margin: 0;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      vertical-align: middle
     }
   }
 }
@@ -129,6 +133,12 @@ export default {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+
+  font-size:1.1rem;
+  padding:1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+;
   
 }
 
