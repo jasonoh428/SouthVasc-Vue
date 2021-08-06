@@ -46,7 +46,14 @@ export default {
 
 
   .location__wrapper {
-    width: 33%;
+
+    width:100%;
+
+    @include desktop {
+       width: 30%;
+
+    }
+   
     padding:.5rem;
     margin:.5rem;
 

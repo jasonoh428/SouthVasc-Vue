@@ -32,11 +32,17 @@ export default {
   @include desktop {
     display: flex;
     flex-wrap: wrap;
+
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    justify-content: space-between;
     flex-direction: row;
   }
 }
 
 .blogCard {
+
+  margin-bottom: 5rem;
 
     a {
         color:var(--lightBlue);

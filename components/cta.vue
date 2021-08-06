@@ -2,7 +2,7 @@
   <section class="cta">
     <strong>{{ content.title }}</strong>
 
-    <a :href="content.button1.file.asset.url" class="button button--Green">{{content.button1.display}}</a
+    <a target="_blank" :href="content.button1.file.asset.url" class="button button--Green">{{content.button1.display}}</a
     ><nuxt-link :to="content.button2.slug" class="button button--Blue">{{content.button2.display}}</nuxt-link>
   </section>
 </template>

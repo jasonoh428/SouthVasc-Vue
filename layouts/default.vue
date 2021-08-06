@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class = "wrapper">
 
     <overlay v-if = "form"/>
     <navBar/>
@@ -78,6 +78,10 @@ html {
   height:3rem;
   width:3rem;
   right:1rem;
+}
+
+.wrapper {
+  position: relative;
 }
 </style>
 

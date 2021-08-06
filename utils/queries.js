@@ -69,7 +69,7 @@ content[] {
       sidebar
     },
 
-    'sidebarPages':*[_type == 'inPageMenus'][1].links[] -> {
+    'sidebarPages':*[_type == 'collections'][0].pages[] -> {
       title,
       'slug':slug.current
     },

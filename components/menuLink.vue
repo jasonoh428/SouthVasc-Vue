@@ -2,7 +2,10 @@
   <div
  
     class="linkWrapper"
- 
+
+    @mouseenter="desktopToggle()"
+    @mouseleave="desktopToggle()"
+   
   >
 
   <div  class = "link__Top" >
@@ -13,7 +16,7 @@
     <nuxt-link 
     v-if="link.internal && link.slug"
       class="menuLink"
-      :to="'/' + link.slug"
+      :to="link.slug"
      
       >{{ link.display }}</nuxt-link
     >
@@ -24,7 +27,7 @@
     </div>
 
     <!---External Link--->
-    <a class="menuLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
+    <a target="_blank" class="menuLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
 
      </div>
    
@@ -48,7 +51,7 @@
         </div>
 
         <!---External Link--->
-        <a class="menuLink childLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
+        <a target="_blank" class="menuLink childLink" v-else :href="link.file.asset.url">{{ link.display }}</a>
       </div>
     </div>
   </div>
@@ -80,6 +83,14 @@ export default {
     toggleExpand() {
       console.log("toggled");
       this.expanded = !this.expanded;
+    },
+
+    desktopToggle() {
+
+     if (window.matchMedia('(min-width: 1024px)').matches) {
+        this.expanded = !this.expanded
+     }
+     
     }
   }
 };
@@ -98,12 +109,18 @@ export default {
   }
 }
 
+
+
 .link__Top {
   display: flex;
   flex-direction: row;
   align-items: center;
   height:100%;
   justify-content: flex-start;
+
+  box-sizing: border-box;
+
+
 }
 
 .expand {
@@ -120,6 +137,10 @@ export default {
 
   &[aria-selected = "true"] {
     transform:rotate(45deg)
+  }
+
+  @include desktop {
+    display: none;
   }
 
 

@@ -1,17 +1,18 @@
 <template>
   <section class="serviceGrid">
-   <p>What we offer</p>
+    <p>What we offer</p>
     <h3>Services</h3>
 
-    <div
+    <nuxt-link
+      class="serviceCard"
       v-for="(service, i) in content.pages"
       :key="i"
+      :to="service.slug.current"
       :style="{ '--bg': 'url(' + $urlFor(service.hero) + ')' }"
-      class="serviceCard"
     >
       <h4>{{ service.title }}</h4>
       <nuxt-link :to="service.slug.current">more info</nuxt-link>
-    </div>
+    </nuxt-link>
   </section>
 </template>
 
@@ -22,9 +23,7 @@ export default {
       type: Object,
       required: true
     }
-  },
-
- 
+  }
 };
 </script>
 
@@ -74,6 +73,7 @@ export default {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
   height: 202px;
   width: 234px;
+  text-decoration: none;
   border: 1px solid white;
   background-size: cover;
   background-position: center center;

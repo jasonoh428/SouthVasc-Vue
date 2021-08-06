@@ -1,6 +1,6 @@
 <template>
   <section class="formComp">
-    <form action="">
+    <form class = "formComp__Form" action="">
       <div class="formComp__input" v-for="(input, i) in form" :key="i">
         <label class="labelStandard" :for="input.name">{{
           input.display
@@ -39,7 +39,7 @@ export default {
 
         {
           name: "location",
-          title: "Location",
+          display: "Location",
           type: "select",
           options: [
             "Jenks Ave, Panama City, FL",
@@ -112,7 +112,7 @@ export default {
     height: 34px;
     line-height: 1.42857;
     padding: 6px 12px;
-    width: 300px;
+    width:100%;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -137,15 +137,43 @@ export default {
     min-height: 20rem;
   }
 
+  
+
  
+}
+
+.formComp__Form {
+
+
+@include desktop {
+
+   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+ 
+
 }
 .formComp__input {
   display: flex;
   margin-bottom: 2rem;
 
+  padding:1rem;
+
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+
+  position: relative;
+
+  @include desktop {
+
+      width:50%;
+
+  }
+  
 }
 
  input[type="checkbox"] {
@@ -155,10 +183,12 @@ export default {
     border:0;
     box-shadow:0px;
     margin-left: 0;
+    width:100%;
   }
 
   input[type="submit"] {
         border: 0;
         border-radius:0%;
+        margin-left: 1rem;
   }
 </style>

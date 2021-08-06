@@ -57,6 +57,15 @@ export default {
   h3 {
     @include h3;
   }
+
+
+ul {
+  margin-bottom: 3rem;
+  li {
+    margin-bottom: .5rem;
+  }
+}
+
 }
 
 .richText__Text {

@@ -1,6 +1,6 @@
 <template>
 
-<section>
+<section class = "navOuter">
     <div class="navTop">Now accepting <nuxt-link to = "/telehealth">Telehealth</nuxt-link> appointments. <nuxt-link to = "/schedule">Schedule a virtual visit.</nuxt-link> </div>
   <nav class = "nav" v-if = "!$fetchState.pending">
 
@@ -59,6 +59,14 @@ export default {
   }
 }
 
+
+.navOuter {
+   position: fixed;
+   z-index:100;
+   background-color:white;
+   width:100%;
+}
+
 .nav {
   @include desktop {
     display: flex;
@@ -67,6 +75,8 @@ export default {
     justify-content: flex-end;
     padding-left: 1rem;
     padding-right: 1rem;
+
+   
 
     .button {
       margin: 0;

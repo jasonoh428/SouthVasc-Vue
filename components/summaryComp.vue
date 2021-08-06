@@ -10,6 +10,8 @@
 
     <div class="summary">
       <sanity-content :blocks="content.text"></sanity-content>
+
+      <overlayButton :display = "'REQUEST APPOINTMENT'"/>
     </div>
   </section>
 </template>

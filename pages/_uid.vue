@@ -41,6 +41,8 @@ export default {
     background-color:var(--lightBlue);
     min-height: 100px;
 
+    padding-top: 10rem;
+
     @include flexCenter;
 
     h1 {
