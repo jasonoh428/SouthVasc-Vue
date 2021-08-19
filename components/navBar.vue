@@ -1,6 +1,6 @@
 <template>
 
-<section class = "navOuter">
+<section :aria-expanded = "opened" class = "navOuter">
     <div class="navTop">Now accepting <nuxt-link to = "/telehealth">Telehealth</nuxt-link> appointments. <nuxt-link to = "/schedule">Schedule a virtual visit.</nuxt-link> </div>
   <nav class = "nav" v-if = "!$fetchState.pending">
 
@@ -50,12 +50,15 @@ export default {
 
 <style lang="scss" scoped>
 .navLinks {
+
   @include desktop {
     display: flex !important;
     flex-direction: row;
     justify-content: flex-end;
     align-items: stretch;
     position: relative;
+    height:initial
+    
   }
 }
 
@@ -65,6 +68,19 @@ export default {
    z-index:100;
    background-color:white;
    width:100%;
+   
+
+   
+
+   &[aria-expanded = "true"] {
+     height:100vh;
+     overflow-y:scroll;
+     @Include desktop {
+       height:initial
+     }
+   }
+
+   
 }
 
 .nav {
@@ -95,7 +111,7 @@ export default {
 
   font-size:1.6rem;
 
-  display: none; 
+ // display: none; 
 
     @include desktop {
       display: block;

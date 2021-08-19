@@ -1,6 +1,6 @@
 <template>
   <section class="richText">
-    <sidebar :page = "content.sidebarPages" v-if="content.sidebar" />
+    <sidebar class = "richText__Sidebar" :page = "content.sidebarPages" v-if="content.sidebar" />
     <sanity-content
       class="richText__Text"
       :serializers="serializers"
@@ -40,6 +40,11 @@ export default {
   @include center;
   @include maxWidth;
 
+  display: flex;
+  flex-direction: column;
+
+  
+
   @include desktop {
     display: flex;
     flex-direction: row;
@@ -70,5 +75,17 @@ ul {
 
 .richText__Text {
   flex: 3;
+  order:1;
+  @include desktop {
+    order:2;
+  }
+}
+
+.richText__Sidebar {
+  order:2;
+
+  @include desktop {
+    order:1
+  }
 }
 </style>

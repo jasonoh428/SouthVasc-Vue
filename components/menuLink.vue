@@ -100,8 +100,11 @@ export default {
 .linkWrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-left: 2rem;
 
   position: relative;
+
+  
 
   @include desktop {
     padding-left: 0;
@@ -127,11 +130,12 @@ export default {
   white-space: nowrap;
   color: var(--link);
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 3rem;
   margin-right: .5rem;
   
+  
   font-weight: bold;
-  display: block;
+  
 
  
 
@@ -150,7 +154,8 @@ export default {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  
   margin-right: 2rem;
   color: var(--link);
 }
