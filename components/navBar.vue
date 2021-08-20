@@ -84,38 +84,9 @@ export default {
    
 }
 
-.nav {
-  @include desktop {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    padding-left: 1rem;
-    padding-right: 1rem;
 
-   
 
-    .button {
-      margin: 0;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-      vertical-align: middle
-    }
-  }
-}
 
-.navTop {
-  @include maxWidth;
-  @include center;
-  text-align: center;
-  padding-top: 1rem;
-
-  font-size:1.6rem;
-
- 
-
-    
-}
 
 .hamburger {
   width: 5rem;
