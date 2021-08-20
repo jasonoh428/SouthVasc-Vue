@@ -63,3 +63,11 @@ $grey:#656f72;
     }
 }
 
+.navHidden {
+    display: none;
+  
+    @include desktop {
+      display:initial
+    }
+  
+  }

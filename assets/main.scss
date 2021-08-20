@@ -189,18 +189,6 @@ a {
 
 
 
-
-
-
-.navHidden {
-  display: none;
-
-  @include desktop {
-    display:initial
-  }
-
-}
-
 .hideNav.button {
   @include desktop {
     display: inline-block;
