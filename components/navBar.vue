@@ -111,11 +111,9 @@ export default {
 
   font-size:1.6rem;
 
- // display: none; 
+ 
 
-    @include desktop {
-      display: block;
-    }
+    
 }
 
 .hamburger {
@@ -145,7 +143,7 @@ export default {
 
 .hideNav.button {
   @include desktop {
-    display: block;
+    display: inline-block;
   }
 }
 
