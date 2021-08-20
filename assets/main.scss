@@ -192,8 +192,12 @@ a {
 
 
 
-.hideNav {
-  display: none !important;
+.navHidden {
+  display: none;
+
+  @include desktop {
+    display:initial
+  }
 
 }
 

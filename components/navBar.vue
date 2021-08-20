@@ -10,14 +10,14 @@
       <div class="hamburger__line"></div>
       <div class="hamburger__line"></div>
     </div>
-    <div :class = "!opened ? 'hideNav' : ''" class="navLinks">
+    <div :class = "!opened ? 'navHidden' : ''" class="navLinks">
       <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" />
 
       
     </div>
 
-      <nuxt-link :class = "!opened ? 'hideNav' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
-      <overlayButton :class = "!opened ? 'hideNav' : 'showButton'" class = "nav__button" :display = "'Request Appointment'"/>
+      <nuxt-link :class = "!opened ? 'navHidden' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
+      <overlayButton :class = "!opened ? 'navHidden' : 'showButton'" class = "nav__button" :display = "'Request Appointment'"/>
   </nav>
 </section>
 </template>
@@ -42,12 +42,6 @@ export default {
     this.menu = await this.$sanity.fetch(navQuery);
   },
 
-  mounted() {
-    console.log(this.menu)
-  }
+  
 };
 </script>
-
-<style lang="scss">
-
-</style>
