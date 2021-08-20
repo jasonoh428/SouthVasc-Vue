@@ -158,6 +158,10 @@ export default {
   
   margin-right: 2rem;
   color: var(--link);
+
+  @include desktop {
+    font-size:1.2rem;
+  }
 }
 
 .link__children {

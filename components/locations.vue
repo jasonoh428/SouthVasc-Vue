@@ -8,6 +8,8 @@
       <div class="location map-responsive" v-html="location.mapEmbed"></div>
 
       <div class="location__Details">
+
+        <p class = "location__Address">{{location.address}}</p>
         <a class="mapLink" :href="'tel:' + location.phoneAppt">{{
           location.phoneAppt
         }}</a>
@@ -45,9 +47,12 @@ export default {
   flex-wrap: wrap;
 
 
+
   .location__wrapper {
 
     width:100%;
+    display: flex;
+    flex-direction: column;
 
     @include desktop {
        width: 30%;
@@ -77,15 +82,20 @@ box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
   flex-direction: row;
   align-items: stretch;
   padding:1rem;
+  flex:1;
+  flex-wrap: wrap;
+  
+  align-content: space-between;
   
 
-  * {
+  *:not(p) {
     font-size:1.4rem !important;
-    display: block;
+    
     border-radius:0;
     flex:1;
     text-align: center;
     margin: 0;
+    vertical-align: middle;
   }
 }
 
@@ -102,5 +112,11 @@ box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
   align-items: center;
   justify-content: center;
   border: 1px solid var(--lightBlue);
+}
+
+.location__Address {
+  width:100%;
+  text-align: center;
+  
 }
 </style>
