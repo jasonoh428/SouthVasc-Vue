@@ -88,25 +88,6 @@ export default {
 
 
 
-.hamburger {
-  width: 5rem;
-  height: 3rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  margin-right: 2rem;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-bottom: 2rem;
-
-  @include desktop {
-    display: none;
-  }
-
-  
-}
 
 .hideNav {
   display: none;
