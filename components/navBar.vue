@@ -57,7 +57,8 @@ export default {
     justify-content: flex-end;
     align-items: stretch;
     position: relative;
-    height:initial
+    height:initial;
+    display: inline-block;
     
   }
 }
