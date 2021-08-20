@@ -151,3 +151,83 @@ a {
 
   
 }
+
+.navLinks {
+
+  @include desktop {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    position: relative;
+    height:initial;
+    display: inline-block;
+    
+  }
+}
+
+
+.navOuter {
+   position: fixed;
+   z-index:100;
+   background-color:white;
+   width:100%;
+   
+
+   
+
+   &[aria-expanded = "true"] {
+     height:100vh;
+     overflow-y:scroll;
+     @Include desktop {
+       height:initial
+     }
+   }
+
+   
+}
+
+
+
+
+
+
+.hideNav {
+  display: none;
+
+}
+
+.hideNav.button {
+  @include desktop {
+    display: inline-block;
+  }
+}
+
+.hamburger__line {
+  width: 100%;
+  height: 4px;
+  background-color: var(--lightBlue);
+}
+
+.nav__button {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  font-size:1.1rem;
+  padding:1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+;
+  
+}
+
+.showButton {
+
+  display: block;
+
+
+  @include desktop {
+    display: block  !important;
+  }
+}
