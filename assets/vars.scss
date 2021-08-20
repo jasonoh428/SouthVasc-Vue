@@ -112,3 +112,94 @@ $grey:#656f72;
   ;
     
   }
+
+  .nav {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  
+     
+  
+      .button {
+        margin: 0;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        vertical-align: middle
+      }
+    }
+  }
+  
+  .navTop {
+    @include maxWidth;
+    @include center;
+    text-align: center;
+    padding-top: 1rem;
+  
+    font-size:1.6rem;
+  
+      
+  }
+  
+  
+  
+  
+  .navLinks {
+  
+    @include desktop {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: stretch;
+      position: relative;
+      height:initial;
+      display: inline-block;
+      
+    }
+  }
+  
+  
+  .navOuter {
+     position: fixed;
+     z-index:100;
+     background-color:white;
+     width:100%;
+     
+  
+     
+  
+     &[aria-expanded = "true"] {
+       height:100vh;
+       overflow-y:scroll;
+       @Include desktop {
+         height:initial
+       }
+     }
+  
+     
+  }
+  
+  
+  
+  .hideNav.button {
+    @include desktop {
+      display: inline-block;
+    }
+  }
+  
+  
+  
+  
+  
+  .showButton {
+  
+    display: block;
+  
+  
+    @include desktop {
+      display: block  !important;
+    }
+  }
