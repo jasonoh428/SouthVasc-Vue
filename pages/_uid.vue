@@ -3,7 +3,7 @@
   <section class="page">
 
       <div class="pageTitle">
-          <h1>{{page.title}}</h1>
+          <h1>{{page.headerTitle ? page.headerTitle : page.title}}</h1>
       </div>
       <contentZone  :content = "page.content"/> 
   </section>
