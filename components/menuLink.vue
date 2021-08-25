@@ -2,9 +2,9 @@
   <div
  
     class="linkWrapper"
-
-    @mouseenter="desktopToggle()"
-    @mouseleave="desktopToggle()"
+    @mouseleave="desktopToggleLeave"
+    @mouseenter="desktopToggleEnter"
+    
    
   >
 
@@ -16,7 +16,7 @@
     <nuxt-link 
     v-if="link.internal && link.slug"
       class="menuLink"
-      :to="link.slug"
+       :to=" link.slug == '/' ? link.slug : ('/' + link.slug)"
      
       >{{ link.display }}</nuxt-link
     >
@@ -35,12 +35,13 @@
 
 
     <!--Child Links-->
-    <div :aria-expanded="expanded" v-if="link.children" class="link__children">
+    <div   :aria-expanded="expanded" v-if="link.children" class="link__children">
       <div v-for="(link, i) in link.children" :key="i" class="childLinkWrapper">
         <!--Internal Link-->
         <nuxt-link
           class="menuLink childLink"
-          :to="link.slug"
+         :to=" link.slug == '/' ? link.slug : ('/' + link.slug)"
+     
           v-if="link.internal && link.slug"
           >{{ link.display }}</nuxt-link
         >
@@ -65,30 +66,42 @@ export default {
       type: Object
     }
   },
+
   
 
   data() {
     return {
-      expanded: false
+      expanded: false,
+    
     };
   },
 
    watch: {
-    '$route.fullPath' : function() {
+    '$route.fullPath'()  {
       this.expanded = false;
     }
   },
 
   methods: {
     toggleExpand() {
-      console.log("toggled");
-      this.expanded = !this.expanded;
+
+      this.expanded = !this.expanded
+
+      
     },
 
-    desktopToggle() {
+    desktopToggleEnter() {
 
      if (window.matchMedia('(min-width: 1024px)').matches) {
-        this.expanded = !this.expanded
+        this.expanded = true
+     }
+     
+    },
+
+    desktopToggleLeave() {
+
+     if (window.matchMedia('(min-width: 1024px)').matches) {
+        this.expanded = false
      }
      
     }
@@ -165,14 +178,12 @@ export default {
 }
 
 .link__children {
-  height: 0;
-  overflow: hidden;
+  display: none;
+
   transition: all 0.5s;
 
   &[aria-expanded="true"] {
-    height: auto;
-    z-index:100;
-    overflow: visible;
+    display: block;
   }
   @include desktop {
     width: 300px;
@@ -187,9 +198,11 @@ export default {
 
 .childLink {
   margin-left: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
   @include desktop {
     padding: 1.5rem;
+    margin-bottom: 0;
     width: 100%;
     border-bottom: 1px solid var(--greyText);
   }

@@ -174,7 +174,7 @@ $grey:#656f72;
      &[aria-expanded = "true"] {
        height:100vh;
        overflow-y:scroll;
-       @Include desktop {
+       @include desktop {
          height:initial
        }
      }

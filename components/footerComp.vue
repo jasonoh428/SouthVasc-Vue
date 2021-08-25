@@ -6,10 +6,10 @@
        <nuxt-link to="/terms-and-conditions">Terms &
       Conditions</nuxt-link> 
 
-      <nuxt-link to = "/">Accessibility Notice</nuxt-link>
+     <!-- <nuxt-link to = "/">Accessibility Notice</nuxt-link>-->
 
 
-      <nuxt-link to = "/contact-us">Contact Us</nuxt-link>
+      <nuxt-link to = "/contact">Contact Us</nuxt-link>
       
         
     </p>

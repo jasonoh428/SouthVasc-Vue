@@ -2,6 +2,16 @@ import { groq } from "@nuxtjs/sanity";
 
 const bodyQuery = groq`
 ...,
+socials,
+
+breadcrumbs -> {
+  
+  breadcrumbs[] {
+    displau,
+    link -> {...}
+  }
+},
+
 
 content[] {
     ...,
@@ -145,6 +155,14 @@ export const navQuery = groq`
 
 export const blogQuery = param => {
   return `*[_type == 'blog' && defined(slug) && slug.current == '${param}'][0] {
+
+breadcrumbs -> {
+  
+  breadcrumbs[] {
+    displau,
+    link -> {...}
+  }
+},
     ...,
     title,
     text,

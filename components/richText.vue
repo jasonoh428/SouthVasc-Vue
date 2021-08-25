@@ -12,6 +12,7 @@
 <script>
 import inlineImage from "~/components/inlineImage.vue";
 import titleBar from "~/components/titleBar.vue";
+import richOverlayButton from "~/components/richOverlayButton.vue";
 
 export default {
   props: {
@@ -28,7 +29,7 @@ export default {
   data() {
     return {
       serializers: {
-        types: { inlineImage: inlineImage, titleBar: titleBar }
+        types: { inlineImage: inlineImage, titleBar: titleBar, overlayButton:richOverlayButton }
       }
     };
   }
@@ -42,6 +43,9 @@ export default {
 
   display: flex;
   flex-direction: column;
+
+
+
 
   
 
@@ -78,7 +82,17 @@ ul {
   order:1;
   @include desktop {
     order:2;
+  
   }
+
+    .richOverlayButton {
+      margin-top: 2rem;
+      .button {font-size:1.4rem;}
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
 }
 
 .richText__Sidebar {

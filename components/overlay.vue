@@ -1,7 +1,9 @@
 <template>
   <section @click="toggleOverlay" class="overlay">
-    <div @click.stop class="overlayInner">
-      <formComp class="overlayInner__Form" />
+    <div class = "overlayScroll">
+      <div @click.stop class="overlayInner">
+        <overlayForm class="overlayInner__Form" />
+      </div>
     </div>
   </section>
 </template>
@@ -13,31 +15,43 @@ export default {
     ...mapMutations({
       toggleOverlay: "toggleForm"
     })
+  },
+
+  watch: {
+    '$route.fullPath'() {
+      this.toggleOverlay()
+    }
   }
 };
 </script>
 
-<style lang = "scss">
+<style lang="scss">
 .overlay {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
 
-  z-index: 100;
+  z-index: 101;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  
 }
 
+.overlayScroll {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
 .overlayInner {
   background-color: white;
   padding: 3rem;
   border-radius: 2rem;
-  overflow:scroll;
-  max-height:90vh;
+  
+  
 }
 
 .overlayInner__Form form {
@@ -47,10 +61,11 @@ export default {
   align-items: center;
 
   .formComp__input {
-    width:100%;
+    width: 100%;
 
-    input[type="text"],textarea {
-      width:100%;
+    input[type="text"],
+    textarea {
+      width: 100%;
     }
 
     textarea {

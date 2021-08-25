@@ -1,5 +1,5 @@
 <template>
- <div @click = "toggleOverlay" role = "button" class="button overlayButton button--Blue">{{display}}</div>
+ <div @click = "toggleOverlay" role = "button" class="button overlayButton button--Blue">{{display ? display : 'REQUEST APPOINTMENT'}}</div>
 </template>
 
 <script>
