@@ -67,6 +67,16 @@ export default {
     @include h3;
   }
 
+  h4 {
+    font-size:2rem;
+
+    @include desktop {
+      font-size: 3rem;
+      font-weight: normal;
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+
 
 ul {
   margin-bottom: 3rem;
