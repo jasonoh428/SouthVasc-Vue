@@ -57,7 +57,7 @@ export default {
             "Panama City Beach Parkway, Panama City Beach, FL",
             "20th Street, Port St. Joe, FL",
             "Hwy 98, Santa Rosa Beach, FL",
-            "South boulevard, Chipley, FL"
+            "South boulevard, Bonifay/Chipley, FL"
           ]
         },
 
