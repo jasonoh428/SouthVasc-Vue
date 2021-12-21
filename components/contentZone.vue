@@ -17,7 +17,7 @@ import richText from "~/components/richText.vue";
 import serviceGrid from "~/components/serviceGrid.vue";
 export default {
   components: {
-    'summary':summaryComp,
+    'summaryCom':summaryComp,
     richText,
     serviceGrid
   },

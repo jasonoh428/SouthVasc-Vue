@@ -41,7 +41,7 @@ export default {
           this.$props.content.slides.length,
           1
         );
-      }, 8000);
+      }, 5000);
     },
 
     preload(url) {
@@ -68,10 +68,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sliderHero {
-  height: 100vh;
+.sliderHero { 
+  height: 65vh;
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-image: var(--bgImage);
 
   display: flex;

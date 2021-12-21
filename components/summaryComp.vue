@@ -4,11 +4,11 @@
       <h2>Southern Vascular of Panama City, LLC</h2>
       <h3>
         Board Certified Vascular and Endovascular Surgeon located in Panama
-        City, Panama City Beach, Port St. Joe, Santa Rosa, & Chipley, FL
+        City, Panama City Beach, Port St. Joe, Santa Rosa, & Bonifay/Chipley, FL
       </h3>
     </div>
 
-    <div class="summary">
+    <div class="summaryCom">
       <sanity-content :blocks="content.text"></sanity-content>
 
       <overlayButton :display = "'REQUEST APPOINTMENT'"/>
@@ -69,7 +69,7 @@ export default {
   }
 }
 
-.summary {
+.summaryCom {
   @include desktop {
     width:62%;
   }

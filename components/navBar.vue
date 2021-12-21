@@ -1,7 +1,8 @@
 <template>
 
 <section :aria-expanded = "opened" class = "navOuter">
-    <div class="navTop">Now accepting <nuxt-link to = "/telehealth">Telehealth</nuxt-link> appointments. <nuxt-link to = "/schedule">Schedule a virtual visit.</nuxt-link> </div>
+    <!--<div class="navTop">Now accepting <nuxt-link to = "/telehealth">Telehealth</nuxt-link> appointments. <nuxt-link to = "/schedule">Schedule a virtual visit.</nuxt-link> </div>-->
+    <div class="navTop"> Call us today at <a href = "tel:8505326303">850-532-6303</a> </div>
   <nav class = "nav" v-if = "!$fetchState.pending">
 
   
