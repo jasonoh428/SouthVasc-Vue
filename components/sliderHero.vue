@@ -41,7 +41,7 @@ export default {
           this.$props.content.slides.length,
           1
         );
-      }, 5000);
+      }, 3000);
     },
 
     preload(url) {

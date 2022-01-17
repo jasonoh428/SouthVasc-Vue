@@ -167,13 +167,13 @@ export default {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   
   margin-right: 2rem;
   color: var(--link);
 
   @include desktop {
-    font-size:1.2rem;
+    font-size:1.6rem;
   }
 }
 
