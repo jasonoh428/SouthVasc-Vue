@@ -5,7 +5,7 @@
     </div>
 
     <div class="pageInfo">
-      <breadcrumbs :breadcrumbs = "page.breadcrumbs" :slug="page.slug.current" :title="page.title" />
+      <breadcrumbs :breadcrumbs = "page.breadcrumbs" v-if="page.breadcrumbs" :slug="page.slug.current" :title="page.title" />
       <div v-if = "page.socials" class="pageSocials">
         <iframe
           src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSouthern-Vascular-of-Panama-City-321683894686825%2F&width=150&layout=button_count&action=like&size=small&share=true&height=46&appId"
@@ -66,10 +66,10 @@ export default {
   },
 
   mounted() {
-    
+
     twttr.widgets.load();
-    
-   
+
+
     if (typeof window.buildPinterest === "function") {
       window.buildPinterest();
     }
@@ -132,7 +132,7 @@ export default {
 
 .pageSocials {
   display: flex;
-  
+
   flex-direction: row;
   align-items: flex-start;
 

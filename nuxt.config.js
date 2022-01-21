@@ -6,18 +6,16 @@ export default {
   head: {
     title: "SouthernVascular",
     htmlAttrs: {
-      lang: "en"
+      lang: "en",
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 
     script: [
-     
-
       {
         vmid: "twitter",
 
@@ -31,21 +29,21 @@ export default {
           js.id = id;
           js.src = "https://platform.twitter.com/widgets.js";
           fjs.parentNode.insertBefore(js, fjs);
-        
+
           t._e = [];
           t.ready = function(f) {
             t._e.push(f);
           };
-        
+
           return t;
         }(document, "script", "twitter-wjs"));`*/
-        src: "//platform.twitter.com/widgets.js"
-      }
+        src: "//platform.twitter.com/widgets.js",
+      },
     ],
 
     __dangerouslyDisableSanitizersByTagID: {
-      twitter: ["innerHTML"]
-    }
+      twitter: ["innerHTML"],
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -62,11 +60,14 @@ export default {
 
   sanity: {
     projectId: "br1xwv5s",
-    token: process.env.SANITY_TOKEN
+    dataset: "production",
+    apiVersion: "v2021-03-25",
+    useCdn: true,
+    token: process.env.SANITY_TOKEN,
   },
 
   styleResources: {
-    scss: ["~/assets/vars.scss"]
+    scss: ["~/assets/vars.scss"],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -74,10 +75,10 @@ export default {
 
   webfontloader: {
     google: {
-      families: ["Raleway:400,700,800", "Open-sans:400"] //Loads Lato font with weights 400 and 700
-    }
+      families: ["Raleway:400,700,800", "Open-sans:400"], //Loads Lato font with weights 400 and 700
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
 };

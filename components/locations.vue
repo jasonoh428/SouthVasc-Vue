@@ -5,7 +5,9 @@
       v-for="(location, i) in content.locations"
       class="location__wrapper"
     >
-      <div class="location map-responsive" v-html="location.mapEmbed"></div>
+      <figure class="location_image ">
+        <SanityImage :asset-id="location.locationImage.asset._ref" format="auto" class="location_image_img" />
+      </figure>
 
       <div class="location__Details">
 
@@ -36,6 +38,15 @@ export default {
 </script>
 
 <style lang="scss">
+.location_image {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.location_image_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .locations {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -58,14 +69,14 @@ export default {
        width: 30%;
 
     }
-   
+
     padding:.5rem;
     margin:.5rem;
 
-    
+
     margin-bottom: 3rem;
 
--webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16); 
+-webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
 box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
 
     iframe {
@@ -84,13 +95,13 @@ box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
   padding:1rem;
   flex:1;
   flex-wrap: wrap;
-  
+
   align-content: space-between;
-  
+
 
   *:not(p) {
     font-size:1.4rem !important;
-    
+
     border-radius:0;
     flex:1;
     text-align: center;
@@ -117,6 +128,6 @@ box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.16);
 .location__Address {
   width:100%;
   text-align: center;
-  
+
 }
 </style>

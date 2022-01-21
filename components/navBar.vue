@@ -5,16 +5,16 @@
     <div class="navTop"> Call us today at <a href = "tel:8505326303">850-532-6303</a> </div>
   <nav class = "nav" v-if = "!$fetchState.pending">
 
-  
+
     <div @click = "opened = !opened" :aria-selected = "opened" class="hamburger">
       <div class="hamburger__line"></div>
       <div class="hamburger__line"></div>
       <div class="hamburger__line"></div>
     </div>
     <div :class = "!opened ? 'navHidden' : ''" class="navLinks">
-      <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" />
+      <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" v-if="menu.links" />
 
-      
+
     </div>
 
       <nuxt-link :class = "!opened ? 'navHidden' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
@@ -43,6 +43,6 @@ export default {
     this.menu = await this.$sanity.fetch(navQuery);
   },
 
-  
+
 };
 </script>

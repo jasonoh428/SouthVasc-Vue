@@ -5,7 +5,7 @@ const bodyQuery = groq`
 socials,
 
 breadcrumbs -> {
-  
+
   breadcrumbs[] {
     displau,
     link -> {...}
@@ -74,7 +74,7 @@ content[] {
   },
 
     _type == 'richText' => {
-    
+
     'pages':*[_type == 'nav'] {
       sidebar
     },
@@ -83,7 +83,7 @@ content[] {
       title,
       'slug':slug.current
     },
-    
+
   },
 
   _type == 'cta2' => {
@@ -99,27 +99,27 @@ content[] {
   },
 
     _type == 'serviceGrid' => {
-   
+
     collection,
 
     'pages': collection->pages[]->,
-      
-    
-   
+
+
+
   }
   }
 `;
 
-export const pageQuery = param => {
+export const pageQuery = (param) => {
   return `*[_type == 'page' && defined(slug) && slug.current == '${param}'][0] {
 
-   
+
 
 ${bodyQuery}
     }`;
 };
 
-export const navQuery = groq`
+export const navQuery = `
 
 *[_type == 'nav'][0] {
 
@@ -127,7 +127,7 @@ export const navQuery = groq`
   title,
   'slug':slug.current
 },
-  
+
   links[] {
     display,
     internal,
@@ -135,29 +135,29 @@ export const navQuery = groq`
 
 
     'slug':internalPage -> slug.current,
-    
-    
+
+
     children[] {
       display,
       file{
         asset -> {url}
         },
       internal,
-     
+
       'slug':internalPage -> slug.current,
-     
+
     },
 
-    
+
   }
 }
 `;
 
-export const blogQuery = param => {
+export const blogQuery = (param) => {
   return `*[_type == 'blog' && defined(slug) && slug.current == '${param}'][0] {
 
 breadcrumbs -> {
-  
+
   breadcrumbs[] {
     displau,
     link -> {...}
@@ -167,7 +167,7 @@ breadcrumbs -> {
     title,
     text,
 
-   
+
 
     'otherBlogs': *[_type == 'blog' && defined(slug) && slug.current != '${param}'] {
       title,
@@ -185,4 +185,4 @@ export const homeQuery = () => {
 };
 
 export const footerQuery = groq`*[_type == 'location']
-`
+`;
