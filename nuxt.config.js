@@ -16,10 +16,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 
     script: [
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=UA-215187232-1",
-        async: true,
-      },
+      // {
+      //   src: "https://www.googletagmanager.com/gtag/js?id=UA-215187232-1",
+      //   async: true,
+      // },
       //   {
       //     vmid: "google-tag",
       //     type: "text/javascript",
