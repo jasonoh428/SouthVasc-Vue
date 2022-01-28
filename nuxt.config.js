@@ -21,14 +21,13 @@ export default {
         async: true,
       },
       {
-        vmid: "google-tag",
+        hid: "gtag",
         type: "text/javascript",
         innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-215187232-1');
+          window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "UA-215187232-1");
         `,
       },
       {
@@ -58,7 +57,7 @@ export default {
 
     __dangerouslyDisableSanitizersByTagID: {
       twitter: ["innerHTML"],
-      "google-tag": ["innerHTML"],
+      gtag: ["innerHTML"],
     },
   },
 
