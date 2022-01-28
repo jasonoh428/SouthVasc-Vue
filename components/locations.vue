@@ -6,7 +6,7 @@
       class="location__wrapper"
     >
       <figure class="location_image ">
-        <SanityImage :asset-id="location.locationImage.asset._ref" format="auto" class="location_image_img" />
+        <SanityImage :asset-id="location.locationImage.asset._ref" v-if="location.locationImage && location.locationImage.asset" format="auto" class="location_image_img" />
       </figure>
 
       <div class="location__Details">

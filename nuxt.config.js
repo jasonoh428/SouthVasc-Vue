@@ -16,21 +16,21 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 
     script: [
-      // {
-      //   src: "https://www.googletagmanager.com/gtag/js?id=UA-215187232-1",
-      //   async: true,
-      // },
-      //   {
-      //     vmid: "google-tag",
-      //     type: "text/javascript",
-      //     innerHTML: `
-      //     window.dataLayer = window.dataLayer || [];
-      // function gtag(){dataLayer.push(arguments);}
-      // gtag('js', new Date());
-      //
-      // gtag('config', 'UA-215187232-1');
-      //     `,
-      //   },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=UA-215187232-1",
+        async: true,
+      },
+      {
+        vmid: "google-tag",
+        type: "text/javascript",
+        innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-215187232-1');
+        `,
+      },
       {
         vmid: "twitter",
 
