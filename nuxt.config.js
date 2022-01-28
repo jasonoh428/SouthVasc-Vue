@@ -21,6 +21,8 @@ export default {
         async: true,
       },
       {
+        vmid: "google-tag",
+        type: "text/javascript",
         innerHTML: `
         window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -56,6 +58,7 @@ export default {
 
     __dangerouslyDisableSanitizersByTagID: {
       twitter: ["innerHTML"],
+      "google-tag": ["innerHTML"],
     },
   },
 
