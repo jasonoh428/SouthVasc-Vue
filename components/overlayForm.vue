@@ -1,8 +1,7 @@
 <template>
   <section class="formComp">
-    <form class="formComp__Form" action="">
-
-       
+    <form class="formComp__Form" name="appointment" method="POST" netlify>
+      <input type="hidden" name="form-name" value="appointment" />
       <div class="formComp__input" v-for="(input, i) in form" :key="i">
         <!--Label-->
         <label class="labelStandard" :for="input.name">{{
@@ -50,7 +49,7 @@
       <!--Final Required-->
 
       <div class="agreement">
-        <input required = "true" name="agreement" type="checkbox" />
+        <input required="true" name="agreement" type="checkbox" />
         <label for="agreement">
           I have read and agreed to the
           <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> and
@@ -297,19 +296,17 @@ input[type="submit"] {
 
   justify-content: space-between;
 
-  a {text-decoration: none;}
+  a {
+    text-decoration: none;
+  }
 
-  
-
-
-input[type=checkbox] {
-    width:auto;
+  input[type="checkbox"] {
+    width: auto;
     margin-right: 5rem;
- 
-}
+  }
 
   label {
-      flex:1;
+    flex: 1;
   }
 }
 </style>
