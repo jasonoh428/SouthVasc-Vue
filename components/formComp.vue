@@ -1,8 +1,8 @@
 <template>
   <section class="formComp">
-    <form class="formComp__Form" action="">
+    <form class="formComp__Form" name="contact" method="POST" netlify>
+      <input type="hidden" name="form-name" value="contact" />
       <div class="formComp__input" v-for="(input, i) in form" :key="i">
-
         <!--Label-->
         <label class="labelStandard" :for="input.name">{{
           input.display
@@ -11,15 +11,14 @@
         <!--Text-->
         <input :name="input.name" v-if="input.type === 'text'" type="text" />
 
-
-<!--Checkbox-->
+        <!--Checkbox-->
         <input
           :name="input.name"
           v-if="input.type === 'checkbox'"
           type="checkbox"
         />
 
-<!--Select-->
+        <!--Select-->
         <select :name="input.name" v-if="input.type === 'select'">
           <option
             :value="option"
@@ -28,7 +27,7 @@
             >{{ option }}</option
           >
         </select>
-<!--Textarea-->
+        <!--Textarea-->
         <textarea :name="input.name" v-if="input.type === 'textarea'" />
       </div>
 
