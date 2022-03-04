@@ -1,6 +1,10 @@
 <template>
   <section class="richText">
-    <sidebar class = "richText__Sidebar" :page = "content.sidebarPages" v-if="content.sidebar" />
+    <sidebar
+      class="richText__Sidebar"
+      :page="content.sidebarPages"
+      v-if="content.sidebar"
+    />
     <sanity-content
       class="richText__Text"
       :serializers="serializers"
@@ -13,23 +17,25 @@
 import inlineImage from "~/components/inlineImage.vue";
 import titleBar from "~/components/titleBar.vue";
 import richOverlayButton from "~/components/richOverlayButton.vue";
+import groupImage from "~/components/groupImage.vue";
 
 export default {
   props: {
     content: {
       type: Object,
       required: true
-    },
-
-   
+    }
   },
-
-  
 
   data() {
     return {
       serializers: {
-        types: { inlineImage: inlineImage, titleBar: titleBar, overlayButton:richOverlayButton }
+        types: {
+          inlineImage: inlineImage,
+          titleBar: titleBar,
+          overlayButton: richOverlayButton,
+          groupImage: groupImage
+        }
       }
     };
   }
@@ -43,11 +49,6 @@ export default {
 
   display: flex;
   flex-direction: column;
-
-
-
-
-  
 
   @include desktop {
     display: flex;
@@ -68,48 +69,47 @@ export default {
   }
 
   h4 {
-    font-size:2rem;
+    font-size: 2rem;
 
     @include desktop {
       font-size: 3rem;
       font-weight: normal;
-      font-family: 'Raleway', sans-serif;
+      font-family: "Raleway", sans-serif;
     }
   }
 
-
-ul {
-  margin-bottom: 3rem;
-  li {
-    margin-bottom: .5rem;
+  ul {
+    margin-bottom: 3rem;
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
-}
-
 }
 
 .richText__Text {
   flex: 3;
-  order:1;
+  order: 1;
   @include desktop {
-    order:2;
-  
+    order: 2;
   }
 
-    .richOverlayButton {
-      margin-top: 2rem;
-      .button {font-size:1.4rem;}
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+  .richOverlayButton {
+    margin-top: 2rem;
+    .button {
+      font-size: 1.4rem;
     }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .richText__Sidebar {
-  order:2;
+  order: 2;
 
   @include desktop {
-    order:1
+    order: 1;
   }
 }
 </style>

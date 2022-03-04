@@ -1,13 +1,16 @@
 <template>
   <section class="blog">
     <div class="pageTitle">
-      <h1>{{  page.headerTitle ? page.headerTitle : page.title}}</h1>
+      <h1>{{ page.headerTitle ? page.headerTitle : page.title }}</h1>
     </div>
 
-
     <div class="pageInfo">
-      <breadcrumbs :breadcrumbs = "page.breadcrumbs" :slug="page.slug.current" :title="page.title" />
-      <div v-if = "page.socials" class="pageSocials">
+      <breadcrumbs
+        :breadcrumbs="page.breadcrumbs"
+        :slug="page.slug.current"
+        :title="page.title"
+      />
+      <div v-if="page.socials" class="pageSocials">
         <iframe
           src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSouthern-Vascular-of-Panama-City-321683894686825%2F&width=150&layout=button_count&action=like&size=small&share=true&height=46&appId"
           width="150"
@@ -38,11 +41,13 @@
     </div>
 
     <main class="blogContent">
-      <sanity-content   :serializers="serializers" :blocks="page.text" />
+      <sanity-content :serializers="serializers" :blocks="page.text" />
     </main>
 
     <blogs-section :content="content"
-      ><p class = "recommendationHeading">You Might Also Enjoy...</p></blogs-section
+      ><p class="recommendationHeading">
+        You Might Also Enjoy...
+      </p></blogs-section
     >
   </section>
 </template>
@@ -51,6 +56,7 @@
 import { blogQuery } from "~/utils/queries.js";
 import blogsSection from "../../components/blogsSection.vue";
 import inlineImage from "~/components/inlineImage.vue";
+import groupImage from "~/components/groupImage.vue";
 export default {
   components: { blogsSection },
 
@@ -71,15 +77,12 @@ export default {
   data() {
     return {
       serializers: {
-        types: { inlineImage: inlineImage },
-        
+        types: { inlineImage: inlineImage, groupImage }
       },
 
       pinterest: false
     };
   },
-
- 
 
   watch: {
     pinterest() {
@@ -88,10 +91,8 @@ export default {
   },
 
   mounted() {
-    
     twttr.widgets.load();
-    
-   
+
     if (typeof window.buildPinterest === "function") {
       window.buildPinterest();
     }
@@ -113,7 +114,6 @@ export default {
       ]
     };
   }
-
 };
 </script>
 
@@ -138,11 +138,11 @@ export default {
 }
 
 .recommendationHeading {
-    width:100%;
-    margin: 4rem 0;
-    text-align: center;
-    font-weight: bold;
-    font-size:3.7rem;
+  width: 100%;
+  margin: 4rem 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.7rem;
 }
 
 .blogContent {
@@ -161,15 +161,15 @@ export default {
   flex-direction: column;
 
   @include desktop {
-      align-items: center;
-      flex-direction: row;
+    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
 
 .pageSocials {
   display: flex;
-  
+
   flex-direction: row;
   align-items: flex-start;
 

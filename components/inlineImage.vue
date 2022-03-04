@@ -9,15 +9,13 @@
 
 <script>
 export default {
-  props: ["image", "width", "float"],
-  
+  props: ["image", "width", "float"]
 };
 </script>
 
 <style lang="scss">
 .inlineImage {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem;
   float: var(--float);
   width: var(--width);
 }
