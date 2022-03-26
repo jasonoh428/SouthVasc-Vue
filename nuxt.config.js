@@ -31,6 +31,22 @@ export default {
         `,
       },
       {
+        src: "https://www.googletagmanager.com/gtag/js?id=AW-10847405916",
+        async: true,
+      },
+      {
+        hid: "gtag2",
+        type: "text/javascript",
+        innerHTML: `
+        function gtag2() {
+          dataLayer.push(arguments);
+        }
+        gtag2("js", new Date());
+      
+        gtag2("config", "AW-10847405916");
+        `,
+      },
+      {
         vmid: "twitter",
 
         defer: true,
@@ -58,6 +74,7 @@ export default {
     __dangerouslyDisableSanitizersByTagID: {
       twitter: ["innerHTML"],
       gtag: ["innerHTML"],
+      gtag2: ["innerHTML"],
     },
   },
 
