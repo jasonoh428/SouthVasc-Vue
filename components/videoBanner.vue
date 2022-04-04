@@ -3,7 +3,7 @@
     <div @click = "toggleVideo = !toggleVideo" class="playButton"></div>
     <h4>{{ content.text }}</h4>
     <div v-if = "toggleVideo" @click = "toggleVideo = !toggleVideo" class="darken">
-      <YoutubeComp v-if = "toggleVideo" class="fixedVideo" :url="content.video.url" />
+      <iframe class="fixedVideo" src="https://player.vimeo.com/video/695038709?h=69617a869e" width="640" height="360" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 </template>
@@ -82,11 +82,11 @@ export default {
 .fixedVideo {
   position: fixed;
   z-index: 100;
- 
+
 
   top:50%;
   left:50%;
-  
+
 
   transform: translate(-50%, -50%);
 }
