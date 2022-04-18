@@ -1,7 +1,7 @@
 <template>
   <section id="videoSection">
     <div class="videoBanner">
-      <iframe v-if = "toggleVideo" class="videoPlayer" :src=" `https://player.vimeo.com/video/${videos[selectedVideo]}?h=69617a869e&autoplay=${shouldAutoPlay && 1}`" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="videoPlayer" :src=" `https://player.vimeo.com/video/${videos[selectedVideo]}?h=69617a869e&autoplay=${shouldAutoPlay && 1}`" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
     <h4 class="videoSelectionTitle"> Explore Our Videos </h4>
     <div class = "videoSelection">
