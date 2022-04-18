@@ -65,6 +65,7 @@ export default {
 
 .beforeAfters__image {
   width:40%;
+  z-index: -1;
 }
 .beforeAfters__Controls {
   display: flex;
@@ -101,20 +102,8 @@ export default {
     left: 0;
     transform: rotate(-135deg);
 
-    
+
   }
 }
 
-.circle {
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border: 2px solid var(--greyText);
-  background-color: transparent;
-  border-radius: 50%;
-
-  &[aria-selected="true"] {
-    background-color: var(--greyText);
-  }
-}
 </style>
