@@ -57,8 +57,8 @@ export default {
       Video Thumbnails are cached, so it may take about an hour for it to update appropriately.
       */
       videos: [
-        "695038709",
         "665012477",
+        "695038709",
         "689381466",
         "677883950",
       ],
