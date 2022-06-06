@@ -75,6 +75,7 @@ export default {
       twitter: ["innerHTML"],
       gtag: ["innerHTML"],
       gtag2: ["innerHTML"],
+      'ld-schema': ["innerHTML"]
     },
   },
 
