@@ -76,8 +76,186 @@ export default {
   },
 
   head() {
+    let scripts = [];
+console.log(this.$route.params.uid)
+if(this.$route.params.uid.includes('varicose-veins-specialist')){
+
+scripts.push({
+hid: 'ld-schema',
+type: "application/ld+json",
+innerHTML: `
+
+{
+
+"@context": "https://schema.org",
+
+"@type": "FAQPage",
+
+"mainEntity": [{
+
+"@type": "Question",
+
+"name": "What are varicose veins?",
+
+"acceptedAnswer": {
+
+"@type": "Answer",
+
+"text": "Varicose veins are thick, rope-like veins that are usually red, purple, or blue. They can occur anywhere, but they’re especially common on the legs, thighs, and calves.
+
+
+
+The veins in your legs work hard to return blood to your heart. Over time, this process can cause your vein valves to weaken and malfunction.
+
+
+
+If your vein valves don’t close as they should, your blood can flow backward and pool. This pooling results in varicose veins."
+
+}
+
+},{
+
+"@type": "Question",
+
+"name": "What are the symptoms of varicose veins?",
+
+"acceptedAnswer": {
+
+"@type": "Answer",
+
+"text": "The symptoms of varicose veins vary. For some people, varicose veins present no obvious symptoms. Other times, they cause:
+
+
+
+An achy or heavy feeling in the legs
+
+Burning, throbbing, or muscle cramping
+
+Worsened pain after sitting or standing
+
+Skin discoloration
+
+Itching
+
+
+
+As varicose veins grow, you might also experience discomfort while running, walking, or participating in other types of exercise."
+
+}
+
+},{
+
+"@type": "Question",
+
+"name": "Who is at risk of getting varicose veins?",
+
+"acceptedAnswer": {
+
+"@type": "Answer",
+
+"text": "Varicose veins affect people of all ages and races, but several factors may increase your risk, including:
+
+
+
+Being middle-aged or older
+
+Being a woman
+
+Being overweight or obese
+
+Being pregnant
+
+Having a family history of varicose veins
+
+
+
+Additionally, you’re more likely to experience varicose veins if you work a job that requires you to sit or stand for long periods of time."
+
+}
+
+},{
+
+"@type": "Question",
+
+"name": "How are varicose veins diagnosed?",
+
+"acceptedAnswer": {
+
+"@type": "Answer",
+
+"text": "To diagnose varicose veins, Southern Vascular of Panama City, LLC conducts a physical exam, reviews your medical history, and asks about your symptoms and lifestyle.
+
+
+
+During the exam, your provider asks you to stand up, sit down, and walk around the room. They also ask you to describe your pain on a scale of one to 10.
+
+
+
+Your provider uses ultrasound imaging to determine if your vein valves are healthy and functioning at normal capacity."
+
+}
+
+},{
+
+"@type": "Question",
+
+"name": "How are varicose veins treated?",
+
+"acceptedAnswer": {
+
+"@type": "Answer",
+
+"text": "Treatment for varicose veins depends on their size, location, severity, and your health history. Depending on your symptoms, Southern Vascular of Panama City, LLC might recommend:
+
+
+
+Sclerotherapy
+
+Sclerotherapy is a minimally invasive treatment that uses a chemical solution called a sclerant to irritate and close your varicose veins. The treatment is outpatient, meaning you can return home on the same day as your appointment.
+
+
+
+Ultrasound-guided vein ablation
+
+Ultrasound-guided vein ablation is a type of treatment used to address varicose veins deep beneath the surface of your skin. Your provider uses ultrasound imaging to pinpoint your veins. Afterward, they use an electrode to heat the vein, causing it to collapse and close.
+
+
+
+Endovenous radiofrequency ablation
+
+Endovenous radiofrequency ablation is similar to ultrasound-guided ablation. The only difference is that it uses radiofrequency technology instead of ultrasound waves. This minimally invasive treatment is particularly beneficial for visible varicose veins near the surface of your skin.
+
+
+
+Don’t let varicose veins prevent you from living your best life. Schedule an appointment for pain-free treatment at Southern Vascular of Panama City, LLC. Call the office or book a consultation online today."
+
+}
+
+}]
+
+}
+
+`
+
+})
+
+}
+
+if(this.$route.params.uid.includes('frff')){
+scripts.push({
+  hid: '',
+  type: 'application/scripts.push',
+  innerHTML: `
+      // put everyting
+  
+  `
+})
+
+}
     return {
-      script: [
+      script: 
+      [
+        ...scripts,
         {
           type: "text/javascript",
 
