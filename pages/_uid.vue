@@ -241,6 +241,20 @@ Don’t let varicose veins prevent you from living your best life. Schedule an a
 
 }
 
+if(this.$route.params.uid.includes('abdominal-aortic-aneurysm')){
+scripts.push({
+  hid: 'ld-schema',
+  type: 'application/ld+json',
+  innerHTML: `
+      {
+        <meta name="Keywords" content="abdominal aortic aneurysm, abdominal aortic aneurysm symptoms, abdominal aortic aneurysms, aneurysm aortic abdominal, aortic abdominal aneurysm, symptoms of abdominal aortic aneurysm, abdominal aortic aneurysm treatment, abdominal aortic aneurysm screening, abdominal aortic aneurysm., abdominal aortic aneurysm icd 10, infrarenal abdominal aortic aneurysm, what is abdominal aortic aneurysm, icd 10 abdominal aortic aneurysm, abdominal aortic aneurysm surgery, aortic abdominal aneurysm icd 10, leaking abdominal aortic aneurysm symptoms, abdominal aortic aneurysm symptoms and signs, abdominal aortic aneurysm ultrasound, aortic abdominal aneurysm symptoms, icd 10 code for abdominal aortic aneurysm, symptoms abdominal aortic aneurysm, treatment for abdominal aortic aneurysm, abdominal aortic aneurysm care, ruptured abdominal aortic aneurysm, signs of abdominal aortic aneurysm, symptoms of an abdominal aortic aneurysm, symptoms of aortic abdominal aneurysm, visible abdominal aortic aneurysm, what causes abdominal aortic aneurysm, what is the most common cause of abdominal aortic aneurysm, abdominal aortic aneurysm causes, abdominal aortic aneurysm repair, abdominal aortic aneurysm size, abdominal aortic aneurysm symptom, abdominal aortic aneurysm symptoms before rupture, aortic aneurysm abdominal, life after abdominal aortic aneurysm surgery, what is an abdominal aortic aneurysm, abdominal aortic aneurysm diagnosis, abdominal aortic aneurysm icd 10 code, an abdominal aortic aneurysm, infrarenal abdominal aortic aneurysm icd 10, screening of abdominal aortic aneurysm, symptoms of abdominal aortic aneurysms, aaa abdominal aortic aneurysm, abdominal aortic aneurysm labs, abdominal aortic aneurysm rupture, abdominal aortic aneurysm signs and symptoms, aortic aneurysm abdominal symptoms, endovascular repair of abdominal aortic aneurysm">
+      }
+  
+  `
+  })
+}
+
+
 if(this.$route.params.uid.includes('frff')){
 scripts.push({
   hid: '',
