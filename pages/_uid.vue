@@ -78,6 +78,8 @@ export default {
   head() {
     let scripts = [];
 console.log(this.$route.params.uid)
+
+//Varicose Veins
 if(this.$route.params.uid.includes('varicose-veins-specialist')){
 
 scripts.push({
@@ -241,14 +243,68 @@ Don’t let varicose veins prevent you from living your best life. Schedule an a
 
 }
 
-if(this.$route.params.uid.includes('abdominal-aortic-aneurysm')){
+//Endovenous radiofrequency ablation
+if(this.$route.params.uid.includes('endovenous-radiofrequency-ablation-specialist')){
 scripts.push({
   hid: 'ld-schema',
   type: 'application/ld+json',
   innerHTML: `
       {
-        <meta name="Keywords" content="abdominal aortic aneurysm, abdominal aortic aneurysm symptoms, abdominal aortic aneurysms, aneurysm aortic abdominal, aortic abdominal aneurysm, symptoms of abdominal aortic aneurysm, abdominal aortic aneurysm treatment, abdominal aortic aneurysm screening, abdominal aortic aneurysm., abdominal aortic aneurysm icd 10, infrarenal abdominal aortic aneurysm, what is abdominal aortic aneurysm, icd 10 abdominal aortic aneurysm, abdominal aortic aneurysm surgery, aortic abdominal aneurysm icd 10, leaking abdominal aortic aneurysm symptoms, abdominal aortic aneurysm symptoms and signs, abdominal aortic aneurysm ultrasound, aortic abdominal aneurysm symptoms, icd 10 code for abdominal aortic aneurysm, symptoms abdominal aortic aneurysm, treatment for abdominal aortic aneurysm, abdominal aortic aneurysm care, ruptured abdominal aortic aneurysm, signs of abdominal aortic aneurysm, symptoms of an abdominal aortic aneurysm, symptoms of aortic abdominal aneurysm, visible abdominal aortic aneurysm, what causes abdominal aortic aneurysm, what is the most common cause of abdominal aortic aneurysm, abdominal aortic aneurysm causes, abdominal aortic aneurysm repair, abdominal aortic aneurysm size, abdominal aortic aneurysm symptom, abdominal aortic aneurysm symptoms before rupture, aortic aneurysm abdominal, life after abdominal aortic aneurysm surgery, what is an abdominal aortic aneurysm, abdominal aortic aneurysm diagnosis, abdominal aortic aneurysm icd 10 code, an abdominal aortic aneurysm, infrarenal abdominal aortic aneurysm icd 10, screening of abdominal aortic aneurysm, symptoms of abdominal aortic aneurysms, aaa abdominal aortic aneurysm, abdominal aortic aneurysm labs, abdominal aortic aneurysm rupture, abdominal aortic aneurysm signs and symptoms, aortic aneurysm abdominal symptoms, endovascular repair of abdominal aortic aneurysm">
-      }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is endovenous radiofrequency ablation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Endovenous radiofrequency ablation is a minimally invasive, image-guided treatment used to address varicose veins.
+
+Varicose veins are large purple, green, or blue veins that commonly appear on the legs. They occur when the vein valves in your legs stop working properly. This causes your blood to flow backward and pool. Over time, this pooling causes the veins to swell and become varicose.
+
+Endovenous radiofrequency ablation uses radiofrequency energy to burn and destroy varicose veins while Venaseal uses an adhesive gel like material to permanently destroy the saphenous vein. Once treated, your veins collapse, and your blood reroutes to healthier veins throughout your body."
+    }
+  },{
+    "@type": "Question",
+    "name": "What symptoms can endovenous radiofrequency/gel ablation treat?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Endovenous radiofrequency ablation can address cosmetic imperfections and ease uncomfortable symptoms. Southern Vascular of Panama City, LLC uses endovenous radiofrequency ablation to ease symptoms like:
+
+Aching or throbbing pain
+Leg heaviness or fatigue
+Swelling
+Skin irritation
+Venous ulcers
+Skin discoloration
+
+You might also benefit from endovenous radiofrequency ablation if you have swollen veins, a condition called phlebitis."
+    }
+  },{
+    "@type": "Question",
+    "name": "How do I prepare for endovenous radiofrequency/gel ablation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Before endovenous radiofrequency ablation, Southern Vascular of Panama City, LLC conducts a physical exam, reviews your medical history, and asks about your symptoms and lifestyle. During this initial consultation, let your provider know about any prescription medications, vitamins, or nutritional supplements you regularly take.
+
+On the day of your appointment, leave your jewelry at home and wear loose-fitting, comfortable clothing. You should also have a friend or family member drive you home following your appointment."
+    }
+  },{
+    "@type": "Question",
+    "name": "How does endovenous radiofrequency ablation work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "At Southern Vascular of Panama City, LLC, the team performs endovenous radiofrequency ablation in the office as an outpatient procedure. Most health insurance plans cover the treatment, which usually takes 15 minutes or less.
+
+On the day of your appointment, you lie down on an exam table on your back or side. Then, your provider administers a local anesthetic to your legs, ensuring you’re comfortable throughout treatment. Once the anesthesia sets in, your provider uses an ultrasound to visualize your veins.
+
+Next, they make a small opening and insert an catheter/electrode through it. The electrode heats up, causing your vein to collapse and close while the gel glues the vein wall together.. Afterward, your blood reroutes to healthier veins. Your provider repeats this process several times, treating each of your visible varicose veins.
+
+Following treatment, your provider applies a bandage to each treatment area. You can walk out of the office and return to work the very next day.
+
+To see if you’re a candidate for endovenous radiofrequency ablation, schedule an appointment at Southern Vascular of Panama City, LLC. Call the office or book a consultation online today."
+    }
+  }]
+}
   
   `
   })
