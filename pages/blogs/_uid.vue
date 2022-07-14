@@ -100,6 +100,11 @@ export default {
 
   head() {
     return {
+      meta: this.page?.meta.map(meta=> ({
+        name: meta.name,
+        content: meta.content
+      })),
+
       script: [
         {
           type: "text/javascript",

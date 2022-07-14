@@ -1269,6 +1269,19 @@ Symptoms of a blocked peripheral artery are pain, achiness, or heaviness in your
   `
 })
 }
+
+
+// if(this.$route.params.uid.includes('frff')){
+// scripts.push({
+//   hid: '',
+//   type: 'application/scripts.push',
+//   innerHTML: `
+//       // put everyting
+  
+//   `
+// })
+// }
+
     return {
       script: 
       [
