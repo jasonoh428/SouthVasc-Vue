@@ -2,8 +2,9 @@
   <section class="cta">
     <strong>{{ content.title }}</strong>
 
-    <a target="_blank" :href="content.button1.file.asset.url" class="button button--Green">{{content.button1.display}}</a
-    ><nuxt-link :to="content.button2.slug" class="button button--Blue">{{content.button2.display}}</nuxt-link>
+    <a href="https://cdn.sanity.io/files/br1xwv5s/production/c611b24f461822aece60899065b74e05cab7f9df.pdf" class="button button--Green" target="_blank" >{{content.button1.display}}</a>
+    <!-- <nuxt-link :to="content.button1.file.asset.url" class="button button--Green" target="_blank">{{content.button1.display}}</nuxt-link> -->
+    <nuxt-link :to="content.button2.slug" class="button button--Blue">{{content.button2.display}}</nuxt-link>
   </section>
 </template>
 
