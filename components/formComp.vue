@@ -1,6 +1,6 @@
 <template>
   <section class="formComp">
-    <form class="formComp__Form" name="contact" method="POST" netlify>
+    <form class="formComp__Form" name="contact" method="POST" action="/thank-you-contact" netlify>
       <input type="hidden" name="form-name" value="contact" />
       <div class="formComp__input" v-for="(input, i) in form" :key="i">
         <!--Label-->
