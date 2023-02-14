@@ -1,6 +1,6 @@
 <template>
   <section class="formComp">
-    <form class="formComp__Form" name="appointment" method="POST" action="/thank-you-appointment" netlify>
+    <form id="appointmentForm" class="formComp__Form" name="appointment" method="POST" @submit.prevent="handleSubmit" netlify data-netlify="true">
       <input type="hidden" name="form-name" value="appointment" />
       <div class="formComp__input" v-for="(input, i) in form" :key="i">
         <!--Label-->
@@ -64,6 +64,16 @@
 </template>
 
 <script>
+import thankYouAppointment from '../pages/thankYouAppointment'
+import VueRouter from 'vue-router'
+
+const router = new VueRouter({
+  routes: [
+    { path: "/thankYouAppointment", component: thankYouAppointment }
+  ]
+})
+
+
 export default {
   data() {
     return {
@@ -169,6 +179,28 @@ export default {
         }
       ]
     };
+  },
+
+  methods: {
+    handleSubmit(event) {
+      let form = document.getElementById('appointmentForm')
+      let formData = new URLSearchParams(new FormData(form))
+      function encode(data) {
+      return Object.keys(data)
+        .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+      } 
+      
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          formData
+        }),
+      })
+      .then(() => this.$router.push("/thankYouAppointment"))
+      .catch((error) => alert(error));
+    }
   }
 };
 </script>
