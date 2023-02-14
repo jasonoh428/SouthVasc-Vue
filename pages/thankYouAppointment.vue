@@ -1,15 +1,14 @@
 <template>
-  <section class="thankYouContact">
+  <section class="thankYouAppointment">
     <div class="pageTitle">
       <h1>Thank You!</h1>
     </div>
     <div class="thanksMessage">
-      <h3>Thanks for contacting us!</h3>
-      <h3>We will get in touch with you shortly.</h3>
+      <h3>Thanks for requesting an appointment!</h3>
     </div>
   </section>
 </template>
-  
+    
 <style lang="scss" scoped>
   .pageTitle {
     background-color: var(--lightBlue);
@@ -30,7 +29,7 @@
       @include h1;
     }
   }
-  .thankYouContact {
+  .thankYouAppointment {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +53,7 @@
     }
 
     h3 {
-      margin-bottom: 50px;
+      margin-bottom: 2rem;
       font-size: 3.6rem;
 
       @include desktop {
@@ -77,8 +76,6 @@
     justify-content: center;
     height: 50rem;
     text-align: center;
-
   }
 
 </style>
-  
