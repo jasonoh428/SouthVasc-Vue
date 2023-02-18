@@ -8,7 +8,7 @@
 
     <div class="menuWrapper">
     <div class="logo">
-      <a href="#"><img class="logoImage" src="SVPC.png"/></a>
+      <a href="/#"><img class="logoImage" src="SVPC.png"/></a>
     </div>
   
     <div class="navMenu">
