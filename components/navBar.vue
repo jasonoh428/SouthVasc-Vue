@@ -22,7 +22,7 @@
         <menuLink :link="link" v-for="(link, i) in menu.links" :key="i" v-if="menu.links" />
       </div>
 
-        <nuxt-link :class = "!opened ? 'navHidden' : 'showButton'" class = "button nav__button button--Green" :to = "menu.button.slug">{{menu.button.title}}</nuxt-link>
+        <a href="tel:8505326303" :class = "!opened ? 'navHidden' : 'showButton'" class = "button nav__button button--Green">{{"850-532-6303"}}</a>
         <overlayButton :class = "!opened ? 'navHidden' : 'showButton'" class = "nav__button" :display = "'Request Appointment'"/>
       </div>
     </div>
