@@ -41,7 +41,7 @@
 }
 
 .logoImage{
-  height: 100px;
+  height: 70px;
   margin-right: auto;
 }
 
@@ -49,7 +49,8 @@
   display:flex;
   flex-wrap: wrap;
   height:10vh;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  margin: auto;
 }
 
 </style>

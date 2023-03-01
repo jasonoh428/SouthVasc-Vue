@@ -78,7 +78,14 @@ export default {
       'ld-schema': ["innerHTML"]
     },
   },
-
+  router: {
+    routes: [
+      {
+        path: '/request-appointment',
+        component: '~/pages/request-appointment.vue'
+      }
+    ]
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/main.scss"],
 
