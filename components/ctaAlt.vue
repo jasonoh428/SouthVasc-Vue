@@ -34,9 +34,10 @@ export default {
     font-size: 36px;
     font-weight: 800;
     text-align: center;
-    color: #2b2c2e;
+    color: white;
     letter-spacing: 0px;
     line-height: 36px;
+    background-color: gray;
   }
 
   .button {
