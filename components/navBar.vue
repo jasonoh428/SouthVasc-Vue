@@ -41,13 +41,15 @@
 }
 
 .logoImage{
-  height: 100px;
+  height: 70px;
   margin-right: auto;
 }
 
 .navMenu{
   display:flex;
   flex-wrap: wrap;
+  /* align-items: flex-end; */
+  margin: auto;
   height:7vh;
   align-items: flex-end;
 }

@@ -101,15 +101,18 @@ $grey:#656f72;
   }
 
   .nav__button {
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
+    // text-align: center;
+    // max-height: 40px;
+    // font-size:1.6rem;
+    // padding:16px;
+    // // margin-top: 20px;
+    // margin-right: 1rem;
     text-align: center;
-  
-    font-size:1.6rem;
-    padding:1rem;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-  ;
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin: auto;
     
   }
 
@@ -128,7 +131,9 @@ $grey:#656f72;
         margin: 0;
         margin-left: 1rem;
         margin-bottom: 1rem;
-        vertical-align: middle
+        vertical-align: middle;
+        max-height: 40px;
+        margin-top: 15px
       }
     }
   }

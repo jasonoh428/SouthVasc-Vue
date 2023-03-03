@@ -170,7 +170,7 @@ export default {
   font-size: 1.8rem;
   
   margin-right: 2rem;
-  color: var(--link);
+  color: var(--lightBlue);
 
   @include desktop {
     font-size:1.6rem;
