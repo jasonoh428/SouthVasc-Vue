@@ -2,11 +2,12 @@
   <section class="blogSection">
     <!--Card-->
     <slot></slot>
-    <div v-for="(blog, i) in content.blogs" :key="i" class="blogCard">
+    <div v-for="(blog, i) in content.blogs.slice(0, 3)" :key="i" class="blogCard">
       <nuxt-link :to="'/blogs/' + blog.slug">{{ blog.title }}</nuxt-link>
       <p>{{ blog.excerpt }}</p>
       <p>{{ blog.date }}</p>
     </div>
+    <a href="#">More News</a>
   </section>
 </template>
 
