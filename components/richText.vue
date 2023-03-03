@@ -43,6 +43,10 @@ export default {
 </script>
 
 <style lang="scss">
+.beforeAfter{
+  display: block;
+  margin-top: 10px
+}
 .richText {
   @include center;
   @include maxWidth;
@@ -89,6 +93,14 @@ export default {
 .richText__Text {
   flex: 3;
   order: 1;
+  p{
+    strong{
+      background-color: gray;
+      padding: 10px;
+      width: 100%;
+      color: white;
+    }
+  }
   @include desktop {
     order: 2;
   }

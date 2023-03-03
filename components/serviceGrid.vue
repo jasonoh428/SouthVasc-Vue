@@ -54,6 +54,8 @@ export default {
   h3 {
     margin-bottom: 2rem;
     font-size: 3.6rem;
+    background-color: gray;
+    color: white;
 
     @include desktop {
       width: 100%;
