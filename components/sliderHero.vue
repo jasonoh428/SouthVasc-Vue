@@ -5,14 +5,16 @@
   >
 
   <div class="heroDarken"></div>
-
-  
     <div class="sliderHero__text">
       <h1>{{ content.heading }}</h1>
       <p>{{ content.subHeading }}</p>
 
       <nuxt-link class="button button--Green" :to="content.button1Link.slug">{{content.button1Link.display}}</nuxt-link>
       <overlayButton :display = "'Request Appointment'"/>
+    </div>
+    <div class="slider-btn-container">
+      <div @click="nextSlide()" class="backButton"></div>
+      <div @click="priorSlide()" class="forwardButton"></div>
     </div>
   </section>
 </template>
@@ -48,6 +50,20 @@ export default {
       
       let img = new Image();
       img.src = url;
+    },
+    nextSlide(){
+      this.current = sliderControls(
+          this.current,
+          this.$props.content.slides.length,
+          1
+        );
+    },
+    priorSlide(){
+      this.current = sliderControls(
+          this.current,
+          this.$props.content.slides.length,
+          -1
+        );
     }
   },
 
@@ -63,7 +79,8 @@ export default {
 
   destroyed() {
     clearTimeout(this.interval);
-  }
+  },
+
 };
 </script>
 
@@ -79,8 +96,35 @@ export default {
   justify-content: center;
 
   position: relative;
+  transition: background 1s linear;
+  
+  .slider-btn-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
 
+  .backButton, .forwardButton {
+    height: 15px;
+    width: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-right: 3px solid var(--bg);
+    border-top: 3px solid var(--bg);
+  }
 
+  .forwardButton {
+    transform: rotate(45deg);
+  }
+
+  .backButton {
+    transform: rotate(225deg);
+  }
 }
 
 .heroDarken {
