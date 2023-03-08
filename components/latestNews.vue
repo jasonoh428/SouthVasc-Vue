@@ -1,14 +1,7 @@
 <template>
   <div class="mainWrapper">
-    <section class="serviceGrid">
-      <h4>What we offer</h4>
-      <h3>Services</h3>
-
-      <nuxt-link class="serviceCard" v-for="(service, i) in content.pages" :key="i" :to="service.slug.current"
-        :style="{ '--bg': 'url(' + $urlFor(service.hero) + ')' }">
-        <h4>{{ service.title }}</h4>
-        <nuxt-link :to="service.slug.current">more info</nuxt-link>
-      </nuxt-link>
+    <section class="latestNews">
+      <h4>Latest News</h4>
     </section>
   </div>
 </template>
@@ -25,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.serviceGrid {
+.latestNews {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,39 +78,5 @@ export default {
   background-color: #f9f7f5;
 }
 
-.serviceCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
-  height: 202px;
-  width: 234px;
-  text-decoration: none;
-  border: 1px solid white;
-  background-size: cover;
-  background-position: center center;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1rem;
-
-  @include desktop {
-    width: 25%;
-  }
-
-  a,
-  h4 {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-  }
-
-  h4 {
-    font-size: 1.8rem;
-  }
-
-  a {
-    font-size: 1.2rem;
-  }
-}
 </style>

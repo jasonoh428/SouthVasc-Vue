@@ -64,8 +64,8 @@
   </template>
   
   <script>
-  import thankYouAppointment from '../pages/thankYouAppointment'
-  import VueRouter from 'vue-router'
+  import VueRouter from 'vue-router';
+import thankYouAppointment from '../pages/thankYouAppointment';
   
   const router = new VueRouter({
     routes: [
@@ -210,6 +210,8 @@
     margin-bottom: 3rem;
     @include maxWidth;
     @include center;
+
+    padding-top: 150px;
   
     label {
       display: block;

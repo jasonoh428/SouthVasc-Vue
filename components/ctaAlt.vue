@@ -1,14 +1,16 @@
 <template>
-  <section class="ctaAlt">
-    <p>{{ content.heading }}</p>
+  <div class="mainWrapper">
+    <section class="ctaAlt">
+      <p>{{ content.heading }}</p>
 
-    <div class="ctaAlt__images">
-      <img :src="$urlFor(content.img1)" alt="" />
-      <img :src="$urlFor(content.img2)" alt="" />
-    </div>
+      <div class="ctaAlt__images">
+        <img :src="$urlFor(content.img1)" alt="" />
+        <img :src="$urlFor(content.img2)" alt="" />
+      </div>
 
-    <a class="button button--Green" :href="content.link.externalLink">{{content.link.display}}</a>
-  </section>
+      <a class="button button--Green" :href="content.link.externalLink">{{ content.link.display }}</a>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -42,17 +44,22 @@ export default {
   }
 
   .button {
-      margin-top: 4rem;
-      display: inline-block;
-      @include center;
-      text-align: center;
+    margin-top: 4rem;
+    display: inline-block;
+    @include center;
+    text-align: center;
   }
+}
+
+.mainWrapper {
+  background-color: #f9f7f5;
 }
 
 .ctaAlt__images {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   img {
     width: 40%;
   }

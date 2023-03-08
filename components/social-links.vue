@@ -31,7 +31,7 @@
     width: 60px;
 }
 .mainWrapper {
-    background-color: #f5f9f9;
+    background-color: #f9f7f5;
     min-height: 240px;
 }
 .mainDiv{
