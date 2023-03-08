@@ -1,25 +1,26 @@
 <template>
-  <section class="sliderTestimonials">
-    <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
-    <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
-    <div
-      v-for="(testimonial, i) in content.testimonials"
-      :key="i"
-      class="slider__testimonial"
-      v-show="current === i"
-    >
-      <p>{{ testimonial.text }}</p>
-      <div class="testimonials__stars">
-        <div v-for="(star, i) in testimonial.stars" :key="i" class="star">
-          <div class="star__cutOut"></div>
+  <div>
+    <section class="sliderTestimonials">
+
+      <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
+      <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
+      <div v-for="(testimonial, i) in content.testimonials" :key="i" class="slider__testimonial" v-show="current === i">
+        <p>{{ testimonial.text }}</p>
+        <div class="testimonials__stars">
+          <div v-for="(star, i) in testimonial.stars" :key="i" class="star">
+            <div class="star__cutOut"></div>
+          </div>
         </div>
+        <p>{{ testimonial.name }}</p>
       </div>
-      <p>{{ testimonial.name }}</p>
-    </div>
-  </section>
+    </section>
+    <SocialLink style="margin-bottom: 20px;" />
+
+  </div>
 </template>
 
 <script>
+import SocialLink from "~/components/social-links.vue"; // import the component
 import { sliderControls } from "~/utils/helpers.js";
 export default {
   props: {
@@ -28,7 +29,7 @@ export default {
       required: true
     }
   },
-
+  components: { SocialLink },
   data() {
     return {
       current: 0
@@ -61,12 +62,14 @@ export default {
 .slider__testimonial {
   text-align: center;
 }
+
 .testimonials__stars {
   display: flex;
   flex-direction: row;
   justify-content: center;
   @include center;
 }
+
 .star {
   margin-right: 0.5rem;
   background-color: var(--lightBlue);
@@ -81,17 +84,15 @@ export default {
   height: 100%;
   width: 100%;
   background-color: white;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+  clip-path: polygon(50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%);
 }
 </style>

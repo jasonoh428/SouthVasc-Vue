@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <contentZone :content="page.content" />
-    <SocialLink />
   </div>
 </template>
 
