@@ -1,16 +1,10 @@
 <template>
-  <section class="richText">
-    <sidebar
-      class="richText__Sidebar"
-      :page="content.sidebarPages"
-      v-if="content.sidebar"
-    />
-    <sanity-content
-      class="richText__Text"
-      :serializers="serializers"
-      :blocks="content.text"
-    />
-  </section>
+  <div class="mainWrapper">
+    <section class="richText">
+      <sidebar class="richText__Sidebar" :page="content.sidebarPages" v-if="content.sidebar" />
+      <sanity-content class="richText__Text" :serializers="serializers" :blocks="content.text" />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -43,10 +37,11 @@ export default {
 </script>
 
 <style lang="scss">
-.beforeAfter{
+.beforeAfter {
   display: block;
   margin-top: 10px
 }
+
 .richText {
   @include center;
   @include maxWidth;
@@ -58,7 +53,9 @@ export default {
     display: flex;
     flex-direction: row;
   }
+
   margin-bottom: 8rem;
+  padding-bottom: 20px;
 
   h2 {
     @include h2;
@@ -84,6 +81,7 @@ export default {
 
   ul {
     margin-bottom: 3rem;
+
     li {
       margin-bottom: 0.5rem;
     }
@@ -93,22 +91,26 @@ export default {
 .richText__Text {
   flex: 3;
   order: 1;
-  p{
-    strong{
+
+  p {
+    strong {
       padding: 10px;
       width: 100%;
       color: gray;
     }
   }
+
   @include desktop {
     order: 2;
   }
 
   .richOverlayButton {
     margin-top: 2rem;
+
     .button {
       font-size: 1.4rem;
     }
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -122,5 +124,9 @@ export default {
   @include desktop {
     order: 1;
   }
+}
+
+.mainWrapper {
+  background-color: #f9f7f5;
 }
 </style>

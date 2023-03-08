@@ -1,4 +1,5 @@
 <template>
+  <div>
   <section class="insurance">
     <div class="insurance__row">
       <div class="insurance__row__col">
@@ -15,22 +16,28 @@
       </div>
     </div>
   </section>
+
+  <latestNews style="margin-bottom: 20px;" /></div>
 </template>
 
 <script>
+import latestNews from "~/components/latestNews.vue";
 export default {
   props: {
     content: {
       type: Object,
       required: true
     }
-  }
+  },
+
+  components: { latestNews },
 };
 </script>
 
 <style lang="scss" scoped>
 .insurance {
   background-color: rgb(245, 249, 249);
+  margin-bottom: 30px;
 }
 
 .insurance__row {
@@ -38,6 +45,7 @@ export default {
   @include center;
 
   padding: 6rem 0;
+
 
   @include desktop {
       display: flex;

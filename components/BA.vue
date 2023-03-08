@@ -1,21 +1,20 @@
 <template>
-  <section class="beforeAfters">
-    <div class="beforeAfters__images">
-      <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
-      <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
-      <img class = "beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageA)" alt="" />
-      <img class = "beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageB)" alt="" />
-    </div>
-    <div class="beforeAfters__Controls">
-      <div
-        :key="i"
-        :aria-selected="current === i"
-        v-for="(item, i) in content.beforeAfters"
-        @click="current = i"
-        class="circle"
-      ></div>
-    </div>
-  </section>
+  <div class="mainWrapper">
+    <section class="beforeAfters">
+
+      <h4 class="beforeAfterTitle">Before & Afters</h4>
+      <div class="beforeAfters__images">
+        <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
+        <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
+        <img class="beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageA)" alt="" />
+        <img class="beforeAfters__image" :src="$urlFor(content.beforeAfters[current].imageB)" alt="" />
+      </div>
+      <div class="beforeAfters__Controls">
+        <div :key="i" :aria-selected="current === i" v-for="(item, i) in content.beforeAfters" @click="current = i"
+          class="circle"></div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -54,6 +53,9 @@ export default {
 .beforeAfters {
   @include maxWidth;
   @include center;
+
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .beforeAfters__images {
@@ -65,7 +67,6 @@ export default {
 
 .beforeAfters__image {
   width:40%;
-  z-index: -1;
 }
 .beforeAfters__Controls {
   display: flex;
@@ -106,4 +107,16 @@ export default {
   }
 }
 
+.beforeAfterTitle {
+  color: var(--greyText);
+  font-size: 2.4rem;
+  padding: 2rem 0;
+  @include center;
+  display: block;
+  text-align: center;
+}
+
+.mainWrapper {
+  background-color: #f9f7f5;
+}
 </style>
