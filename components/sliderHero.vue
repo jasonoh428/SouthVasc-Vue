@@ -105,7 +105,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .backButton, .forwardButton {
