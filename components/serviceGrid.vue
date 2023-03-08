@@ -1,6 +1,6 @@
 <template>
   <section class="serviceGrid">
-    <h3>What we offer</h3>
+    <h4>What we offer</h4>
     <h3>Services</h3>
 
     <nuxt-link
@@ -52,6 +52,16 @@ export default {
   }
 
   h3 {
+    margin-bottom: 2rem;
+    font-size: 3.6rem;
+    color: gray;
+
+    @include desktop {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  h4 {
     margin-bottom: 2rem;
     font-size: 3.6rem;
     background-color: gray;

@@ -7,7 +7,7 @@
       <p>{{ blog.excerpt }}</p>
       <p>{{ blog.date }}</p>
     </div>
-    <a href="#">More News</a>
+    <h2 href="#" style="text-decoration: underline;">More News</h2>
   </section>
 </template>
 

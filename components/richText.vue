@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import inlineImage from "~/components/inlineImage.vue";
-import titleBar from "~/components/titleBar.vue";
-import richOverlayButton from "~/components/richOverlayButton.vue";
 import groupImage from "~/components/groupImage.vue";
+import inlineImage from "~/components/inlineImage.vue";
+import richOverlayButton from "~/components/richOverlayButton.vue";
+import titleBar from "~/components/titleBar.vue";
 
 export default {
   props: {
@@ -95,10 +95,9 @@ export default {
   order: 1;
   p{
     strong{
-      background-color: gray;
       padding: 10px;
       width: 100%;
-      color: white;
+      color: gray;
     }
   }
   @include desktop {
