@@ -34,10 +34,11 @@ export default {
     font-size: 36px;
     font-weight: 800;
     text-align: center;
-    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: gray;
     letter-spacing: 0px;
     line-height: 36px;
-    background-color: gray;
   }
 
   .button {

@@ -1,18 +1,19 @@
 <template>
   <div>
     <section class="sliderTestimonials">
-
       <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
       <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
-      <div v-for="(testimonial, i) in content.testimonials" :key="i" class="slider__testimonial" v-show="current === i">
-        <p>{{ testimonial.text }}</p>
-        <div class="testimonials__stars">
-          <div v-for="(star, i) in testimonial.stars" :key="i" class="star">
-            <div class="star__cutOut"></div>
+      <div class="sliderTestimonialsItemsWrapper">
+        <div v-for="(testimonial, i) in content.testimonials" :key="i" :class="{'slider__testimonial':true,'active':current === i,'left-slider':i<current,'right-slider':i>current}">
+          <p>{{ testimonial.text }}</p>
+          <div class="testimonials__stars">
+            <div v-for="(star, i) in testimonial.stars" :key="i" class="star">
+              <div class="star__cutOut"></div>
+            </div>
           </div>
+          <p>{{ testimonial.name }}</p>
         </div>
-        <p>{{ testimonial.name }}</p>
-      </div>
+      </div>      
     </section>
     <SocialLink style="margin-bottom: 20px;" />
 
@@ -56,11 +57,46 @@ export default {
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  position: relative;
+  position: relative; 
+  padding-left:50px;
+  padding-right:50px;  
 }
-
+.sliderTestimonialsItemsWrapper {
+  position: relative;
+  height: 120px;
+  overflow-x: hidden;
+}
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
+}
+.slide-leave-to {
+  transform: translate(-100%, 0);
+}
 .slider__testimonial {
-  text-align: center;
+  text-align: center;  
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 1s;
+
+}
+.slider__testimonial.active {
+  left:0;
+}
+.slider__testimonial.left-slider {
+  left:-100%;
+}
+.slider__testimonial.right-slider {
+  left:100%;
+}
+.beforeAfters__arrows {
+  z-index: 100;  
 }
 
 .testimonials__stars {
