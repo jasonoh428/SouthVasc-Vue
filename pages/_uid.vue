@@ -41,7 +41,9 @@
 
 <script>
 import contentZone from "~/components/contentZone.vue";
+import richText from "~/components/richText.vue";
 import { pageQuery } from "~/utils/queries.js";
+
 export default {
   components: {
     contentZone,
