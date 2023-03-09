@@ -1,10 +1,10 @@
 <template>
-  <div class="mainWrapper">
+  <!-- <div class="mainWrapper"> -->
     <section class="richText">
       <sidebar class="richText__Sidebar" :page="content.sidebarPages" v-if="content.sidebar" />
       <sanity-content class="richText__Text" :serializers="serializers" :blocks="content.text" />
     </section>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>

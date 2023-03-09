@@ -1,9 +1,7 @@
 <template>
-  <div class="mainWrapper">
-    <section class="latestNews">
-      <h4>Latest News</h4>
-    </section>
-  </div>
+  <section class="latestNews">
+    <h2>Latest News</h2>
+  </section>
 </template>
 
 <script>
@@ -55,16 +53,14 @@ export default {
     }
   }
 
-  h4 {
-    margin-bottom: 2rem;
-    font-size: 3.6rem;
-    color: gray;
+  h2 {
+    @include h2;
 
     @include desktop {
-      width: 100%;
-      text-align: center;
+      margin-top: 0;
     }
   }
+
 
   @include desktop {
     flex-direction: row;
@@ -77,6 +73,4 @@ export default {
 .mainWrapper {
   background-color: #f9f7f5;
 }
-
-
 </style>
