@@ -4,8 +4,8 @@
             <h1>Follow us on Social Media</h1>
             <div class="starDiv">★★★★★</div>
             <div class="iconsDiv">
-                <a href="https://www.facebook.com/SouthernVascularPC" target="_blank"><img class="fbImg" src="https://veincenterlou.wpengine.com/wp-content/uploads/2021/01/72528-300x300.png"></a>
-                <img class="instaImg" src="https://veincenterlou.wpengine.com/wp-content/uploads/2021/01/72531-300x300.png">
+                <a href="https://www.facebook.com/SouthernVascularPC" target="_blank"><img class="fbImg" src="https://acadianavascular.com/wp-content/uploads/2021/01/72528-300x300.png"></a>
+                <img class="instaImg" src="https://acadianavascular.com/wp-content/uploads/2021/01/72531-300x300.png">
             </div>
         </div>
     </div>
