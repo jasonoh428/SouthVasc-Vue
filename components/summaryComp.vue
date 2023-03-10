@@ -1,28 +1,42 @@
 <template>
-  <section class="preBody">
-    <div class="identity">
-      <h2>Southern Vascular of Panama City, LLC</h2>
-      <h3>
-        Board Certified Vascular and Endovascular Surgeon located in Panama
-        City, Panama City Beach, Port St. Joe, Santa Rosa, & Bonifay/Chipley, FL
-      </h3>
-    </div>
+  <div class="mainWrapper">
+    <section class="preBody">
 
-    <div class="summaryCom">
-      <sanity-content :blocks="content.text"></sanity-content>
+      <div class="summaryCom">
+        <sanity-content :serializers="serializers" :blocks="content.text"></sanity-content>
 
-      <overlayButton :display = "'REQUEST APPOINTMENT'"/>
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
+
+
+import groupImage from "~/components/groupImage.vue";
+import inlineImage from "~/components/inlineImage.vue";
+import richOverlayButton from "~/components/richOverlayButton.vue";
+import titleBar from "~/components/titleBar.vue";
+
 export default {
   props: {
     content: {
       type: Object,
       required: true
     }
+  },
+
+  data() {
+    return {
+      serializers: {
+        types: {
+          inlineImage: inlineImage,
+          titleBar: titleBar,
+          overlayButton: richOverlayButton,
+          groupImage: groupImage
+        }
+      }
+    };
   }
 };
 </script>
@@ -31,7 +45,9 @@ export default {
 .preBody {
   @include center;
   @include maxWidth;
-  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   @include desktop {
     display: flex;
@@ -45,7 +61,7 @@ export default {
   margin-bottom: 1rem;
 
   @include desktop {
-    width:32%;
+    width: 32%;
     text-align: center;
     padding-right: 2rem;
     padding-left: 2rem;
@@ -71,7 +87,11 @@ export default {
 
 .summaryCom {
   @include desktop {
-    width:62%;
+    width: 62%;
   }
+}
+
+.mainWrapper {
+  background-color: #f9f7f5;
 }
 </style>

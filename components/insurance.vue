@@ -1,27 +1,24 @@
 <template>
   <div>
-  <section class="insurance">
-    <div class="insurance__row">
-      <div class="insurance__row__col">
-        <h4>{{ content.heading }}</h4>
-        <p>{{ content.text }}</p>
+    <section class="insurance">
+      <div class="insurance__row">
+        <div class="insurance__row__col">
+          <h4>{{ content.heading }}</h4>
+          <p>{{ content.text }}</p>
+        </div>
+        <div class="insurance__row__col">
+          <img :key="i" v-for="(image, i) in content.images" :src="$urlFor(image)" alt="" />
+        </div>
       </div>
-      <div class="insurance__row__col">
-        <img
-          :key="i"
-          v-for="(image, i) in content.images"
-          :src="$urlFor(image)"
-          alt=""
-        />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <latestNews style="margin-bottom: 20px;" /></div>
+    <h2 class="latestNews">Latest News</h2>
+
+  </div>
 </template>
 
 <script>
-import latestNews from "~/components/latestNews.vue";
+// import latestNews from "~/components/latestNews.vue";
 export default {
   props: {
     content: {
@@ -30,7 +27,7 @@ export default {
     }
   },
 
-  components: { latestNews },
+  // components: { latestNews },
 };
 </script>
 
@@ -48,9 +45,9 @@ export default {
 
 
   @include desktop {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -61,14 +58,40 @@ export default {
   }
 }
 
-.insurance__row__col {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 
-    img {
-        width:25%;
-        background-color:white;
+.latestNews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  font-weight: 500;
+
+  @include maxWidth;
+  @include center;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h2 {
+    @include h2;
+
+
+    @include desktop {
+      margin-top: 0;
     }
+  }
+
+}
+
+.insurance__row__col {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  img {
+    width: 25%;
+    background-color: white;
+  }
 }
 </style>

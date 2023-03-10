@@ -1,10 +1,8 @@
 <template>
-  <!-- <div class="mainWrapper"> -->
-    <section class="richText">
-      <sidebar class="richText__Sidebar" :page="content.sidebarPages" v-if="content.sidebar" />
-      <sanity-content class="richText__Text" :serializers="serializers" :blocks="content.text" />
-    </section>
-  <!-- </div> -->
+  <section class="richText">
+    <sidebar class="richText__Sidebar" :page="content.sidebarPages" v-if="content.sidebar" />
+    <sanity-content class="richText__Text" :serializers="serializers" :blocks="content.text" />
+  </section>
 </template>
 
 <script>
@@ -54,7 +52,7 @@ export default {
     flex-direction: row;
   }
 
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   padding-bottom: 20px;
 
   h2 {
@@ -124,9 +122,5 @@ export default {
   @include desktop {
     order: 1;
   }
-}
-
-.mainWrapper {
-  background-color: #f9f7f5;
 }
 </style>
