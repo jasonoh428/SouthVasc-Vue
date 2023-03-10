@@ -7,7 +7,7 @@
       <p>{{ blog.excerpt }}</p>
       <p>{{ blog.date }}</p>
     </div>
-    <h2 href="#" style="text-decoration: underline;">More News</h2>
+    <a href="/blog" class="textButton">More News</a>
   </section>
 </template>
 
@@ -19,7 +19,6 @@ export default {
       type: Object
     }
   },
-
  
 };
 </script>
@@ -56,5 +55,10 @@ export default {
     width: 33%;
     padding: 0 1rem;
   }
+}
+
+.textButton {
+  text-decoration: underline;
+  font-size: 18px;
 }
 </style>
