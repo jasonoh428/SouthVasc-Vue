@@ -2,7 +2,7 @@
   <div class="mainWrapper">
     <section class="beforeAfters">
 
-      <h4 class="beforeAfterTitle">Before & Afters</h4>
+      <h2 class="beforeAfterTitle">Before & Afters</h2>
       <div class="beforeAfters__images">
         <div @click="current = slider(1)" class="beforeAfters__arrows"></div>
         <div @click="current = slider(-1)" class="beforeAfters__arrows"></div>
@@ -55,7 +55,16 @@ export default {
   @include center;
 
   padding-bottom: 10px;
+  padding-top: 10px;
   margin-bottom: 20px;
+
+  h2 {
+    @include h2;
+
+    @include desktop {
+      margin-top: 0;
+    }
+  }
 }
 
 .beforeAfters__images {

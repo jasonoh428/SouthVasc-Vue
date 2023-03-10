@@ -15,7 +15,7 @@
         </div>
       </div>      
     </section>
-    <SocialLink style="margin-bottom: 20px;" />
+    <SocialLink style="margin-bottom: 0px;" />
 
   </div>
 </template>
