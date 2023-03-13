@@ -21,7 +21,6 @@
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
-
         <div>
           <a
             class="twitter-share-button"
@@ -53,10 +52,10 @@
 </template>
 
 <script>
+import groupImage from "~/components/groupImage.vue";
+import inlineImage from "~/components/inlineImage.vue";
 import { blogQuery } from "~/utils/queries.js";
 import blogsSection from "../../components/blogsSection.vue";
-import inlineImage from "~/components/inlineImage.vue";
-import groupImage from "~/components/groupImage.vue";
 export default {
   components: { blogsSection },
 
