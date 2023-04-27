@@ -16,7 +16,7 @@
     <div v-for="(location, i) in footer" :key="i" class="footer__Container">
       <p>{{ location.title }}</p>
       <div class="footer__Container__phones">
-        <p>Phone (appointments): {{ location.phoneAppt }}</p>
+        <!-- <p>Phone (appointments): {{ location.phoneAppt }}</p> -->
         <p>Phone (general inquiries): {{ location.phoneGeneral }}</p>
       </div>
       <p>Address {{ location.address }}</p>
